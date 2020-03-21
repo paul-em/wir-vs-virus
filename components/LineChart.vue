@@ -40,6 +40,9 @@ export default {
         datasets: this.datasets,
       },
       options: {
+        animation: {
+          duration: 0,
+        },
         maintainAspectRatio: false,
         legend: {
           display: false,

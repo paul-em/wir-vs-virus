@@ -11,7 +11,10 @@
         label="label"/>
       <div class="py-4">
         <v-slider
+          :min="0"
+          :max="100"
           v-model="rValue"/>
+        {{ rValue }}
       </div>
       <line-chart
         v-if="selectedLocation"
@@ -61,7 +64,7 @@ export default {
       province: 'Hubei',
       label: 'China Hubei',
     },
-    rValue: 0.5,
+    rValue: 50,
   }),
   computed: {
     locationOptions() {
@@ -72,13 +75,11 @@ export default {
       }));
     },
     dates() {
-      const confirmedData = this.data.confirmed.find(
-        item => item['Country/Region'] === this.selectedLocation.country
-          && item['Province/State'] === this.selectedLocation.province,
-      );
-      return Object.keys(confirmedData).filter(
-        i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i),
-      ).map(date => formatDate(date));
+      const dates = [];
+      for (let day = 0; day < 300; day += 1) {
+        dates.push(formatDate(new Date(2020, 0, 22 + day)));
+      }
+      return dates;
     },
     datasets() {
       const confirmedData = this.data.confirmed.find(
@@ -111,9 +112,17 @@ export default {
       return [
         {
           label: 'Infected',
-          data: confirmedTimeline,
+          data: confirmedTimeline
+            .map((v, index) => v - recoveredTimeline[index]),
           backgroundColor: 'rgba(0, 0, 255, 0.2)',
           borderColor: 'rgba(0, 0, 255, 0.8)',
+        },
+        {
+          label: 'Infected Prediction',
+          data: this.getSimplePrediction(confirmedTimeline
+            .map((v, index) => v - recoveredTimeline[index]), -1),
+          backgroundColor: 'rgba(0, 0, 255, 0.1)',
+          borderColor: 'rgba(0, 0, 255, 0.5)',
         },
         {
           label: 'Deaths',
@@ -122,12 +131,38 @@ export default {
           borderColor: 'rgba(255, 0, 0, 0.8)',
         },
         {
+          label: 'Deaths Prediction',
+          data: this.getSimplePrediction(deathsTimeline, 1),
+          backgroundColor: 'rgba(255, 0, 0, 0.1)',
+          borderColor: 'rgba(255, 0, 0, 0.5)',
+        },
+        {
           label: 'Recovered',
           data: recoveredTimeline,
           backgroundColor: 'rgba(0, 255, 0, 0.2)',
           borderColor: 'rgba(0, 255, 0, 0.8)',
         },
+        {
+          label: 'Recovered Prediction',
+          data: this.getSimplePrediction(recoveredTimeline, 1),
+          backgroundColor: 'rgba(0, 255, 0, 0.1)',
+          borderColor: 'rgba(0, 255, 0, 0.5)',
+        },
       ];
+    },
+  },
+  methods: {
+    getSimplePrediction(timeline) {
+      let lastValue = parseInt(timeline[timeline.length - 1], 10);
+      const prediction = [];
+      for (let i = 0; i < timeline.length - 1; i += 1) {
+        prediction.push(null);
+      }
+      for (let i = 0; i < 300 - timeline.length; i += 1) {
+        prediction.push(lastValue);
+        lastValue += Math.round(lastValue * ((this.rValue - 50) / 1000));
+      }
+      return prediction;
     },
   },
 };
