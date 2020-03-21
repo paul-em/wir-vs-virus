@@ -8,13 +8,28 @@
       <h2 class="subtitle">
         Hackaton Project 1757
       </h2>
-      {{ data }}
+      <line-chart 
+        :datasets="datasets" 
+        :labels="dates"/>
     </div>
   </section>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import LineChart from '~/components/LineChart.vue'
+
+function formatDate(str) {
+  const d = new Date(str)
+  return `${d.getFullYear()}-${fill(d.getMonth() + 1)}-${fill(d.getDate())}`
+}
+
+function fill(num) {
+  if (num < 10) {
+    return `0${num}`
+  }
+  return `${num}`
+}
 
 export default {
   async asyncData({ app: { $loader } }) {
@@ -23,11 +38,63 @@ export default {
     }
   },
   components: {
-    Logo
+    Logo,
+    LineChart
   },
   data: () => ({
     data: []
-  })
+  }),
+  computed: {
+    dates() {
+      const confirmedData = this.data.confirmed.find(
+        item => item['Country/Region'] === 'Germany'
+      )
+      const confirmedTimeline = Object.keys(confirmedData).filter(
+        i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i)
+      )
+      return confirmedTimeline
+    },
+    datasets() {
+      const confirmedData = this.data.confirmed.find(
+        item => item['Country/Region'] === 'Germany'
+      )
+      const deathsData = this.data.deaths.find(
+        item => item['Country/Region'] === 'Germany'
+      )
+      const recoveredData = this.data.recovered.find(
+        item => item['Country/Region'] === 'Germany'
+      )
+      const confirmedTimeline = Object.keys(confirmedData)
+        .filter(
+          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i)
+        )
+        .map(key => confirmedData[key])
+      const deathsTimeline = Object.keys(deathsData)
+        .filter(
+          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i)
+        )
+        .map(key => deathsData[key])
+      const recoveredTimeline = Object.keys(recoveredData)
+        .filter(
+          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i)
+        )
+        .map(key => recoveredData[key])
+      return [
+        {
+          label: 'Confirmed',
+          data: confirmedTimeline
+        },
+        {
+          label: 'Deaths',
+          data: deathsTimeline
+        },
+        {
+          label: 'Recovered',
+          data: recoveredTimeline
+        }
+      ]
+    }
+  }
 }
 </script>
 
