@@ -15,6 +15,7 @@ const routerBase =
 module.exports = {
   mode: 'spa',
 
+  ...routerBase,
   /*
   ** Headers of the page
   */
