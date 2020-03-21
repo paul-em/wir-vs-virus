@@ -1,27 +1,30 @@
 <template>
-  <section class="container">
-    <div>
-      <h1 class="title">
-        wir-vs-virus
-      </h1>
-      <h2 class="subtitle">
-        Hackathon Project 1757
-      </h2>
-      <v-select 
+  <section class="text-center">
+    <h3>Corona Virus</h3>
+    <h1>
+      What can <span class="font-black font-serif">I</span> do?
+    </h1>
+    <div class="p-4">
+      <v-select
         v-model="selectedLocation" 
         :options="locationOptions"
         label="label"/>
-      <line-chart 
-        v-if="selectedLocation"
-        :datasets="datasets" 
-        :labels="dates"/>
     </div>
+    <div class="p-4">
+      <v-slider v-model="rValue"/>
+    </div>
+    <line-chart
+      v-if="selectedLocation"
+      :datasets="datasets" 
+      :labels="dates"/>
   </section>
 </template>
 
 <script>
 import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css'
+import vSlider from 'vue-slider-component'
+import 'vue-slider-component/theme/default.css'
 import Logo from '~/components/Logo.vue'
 import LineChart from '~/components/LineChart.vue'
 
@@ -46,7 +49,8 @@ export default {
   components: {
     Logo,
     LineChart,
-    vSelect
+    vSelect,
+    vSlider
   },
   data: () => ({
     data: [],
@@ -54,7 +58,8 @@ export default {
       country: 'Germany',
       province: '',
       label: 'Germany'
-    }
+    },
+    rValue: 0.5
   }),
   computed: {
     locationOptions() {
@@ -109,15 +114,21 @@ export default {
       return [
         {
           label: 'Confirmed',
-          data: confirmedTimeline
+          data: confirmedTimeline,
+          backgroundColor: 'rgba(0, 0, 255, 0.2)',
+          borderColor: 'rgba(0, 0, 255, 0.8)'
         },
         {
           label: 'Deaths',
-          data: deathsTimeline
+          data: deathsTimeline,
+          backgroundColor: 'rgba(255, 0, 0, 0.2)',
+          borderColor: 'rgba(255, 0, 0, 0.8)'
         },
         {
           label: 'Recovered',
-          data: recoveredTimeline
+          data: recoveredTimeline,
+          backgroundColor: 'rgba(0, 255, 0, 0.2)',
+          borderColor: 'rgba(0, 255, 0, 0.8)'
         }
       ]
     }
@@ -126,39 +137,4 @@ export default {
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
