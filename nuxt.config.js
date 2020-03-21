@@ -1,16 +1,14 @@
-const pkg = require('./package')
+const pkg = require('./package');
 
 // only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
-const routerPath =
-  process.env.DEPLOY_ENV === 'GH_PAGES' ? '/wir-vs-virus/' : '/'
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? {
-        router: {
-          base: routerPath
-        }
-      }
-    : {}
+const routerPath = process.env.DEPLOY_ENV === 'GH_PAGES' ? '/wir-vs-virus/' : '/';
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES'
+  ? {
+    router: {
+      base: routerPath,
+    },
+  }
+  : {};
 
 module.exports = {
   mode: 'spa',
@@ -24,11 +22,11 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: `${routerPath}favicon.ico` }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: `${routerPath}favicon.ico` },
+    ],
   },
 
   /*
@@ -51,7 +49,7 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
   ],
   /*
   ** Axios module configuration
@@ -74,9 +72,9 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+          exclude: /(node_modules)/,
+        });
       }
-    }
-  }
-}
+    },
+  },
+};

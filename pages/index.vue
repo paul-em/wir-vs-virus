@@ -6,135 +6,131 @@
     </h1>
     <div class="pt-8">
       <v-select
-        v-model="selectedLocation" 
+        v-model="selectedLocation"
         :options="locationOptions"
         label="label"/>
       <div class="py-4">
-        <v-slider 
-          v-model="rValue" />
+        <v-slider
+          v-model="rValue"/>
       </div>
       <line-chart
         v-if="selectedLocation"
-        :datasets="datasets" 
+        :datasets="datasets"
         :labels="dates"/>
     </div>
   </section>
 </template>
 
 <script>
-import vSelect from 'vue-select'
-import 'vue-select/dist/vue-select.css'
-import vSlider from 'vue-slider-component'
-import 'vue-slider-component/theme/default.css'
-import Logo from '~/components/Logo.vue'
-import LineChart from '~/components/LineChart.vue'
-
-function formatDate(str) {
-  const d = new Date(str)
-  return `${d.getFullYear()}-${fill(d.getMonth() + 1)}-${fill(d.getDate())}`
-}
+import vSelect from 'vue-select';
+import 'vue-select/dist/vue-select.css';
+import vSlider from 'vue-slider-component';
+import 'vue-slider-component/theme/default.css';
+import Logo from '../components/Logo.vue';
+import LineChart from '../components/LineChart.vue';
 
 function fill(num) {
   if (num < 10) {
-    return `0${num}`
+    return `0${num}`;
   }
-  return `${num}`
+  return `${num}`;
 }
+
+function formatDate(str) {
+  const d = new Date(str);
+  return `${d.getFullYear()}-${fill(d.getMonth() + 1)}-${fill(d.getDate())}`;
+}
+
 
 export default {
   async asyncData({ app: { $loader } }) {
     return {
-      data: await $loader.load()
-    }
+      data: await $loader.load(),
+    };
   },
   components: {
     Logo,
     LineChart,
     vSelect,
-    vSlider
+    vSlider,
   },
   data: () => ({
     data: [],
     selectedLocation: {
-      country: 'Germany',
-      province: '',
-      label: 'Germany'
+      country: 'China',
+      province: 'Hubei',
+      label: 'China Hubei',
     },
-    rValue: 0.5
+    rValue: 0.5,
   }),
   computed: {
     locationOptions() {
       return this.data.confirmed.map(item => ({
         country: item['Country/Region'],
         province: item['Province/State'],
-        label: `${item['Country/Region']} ${item['Province/State']}`
-      }))
+        label: `${item['Country/Region']} ${item['Province/State']}`,
+      }));
     },
     dates() {
       const confirmedData = this.data.confirmed.find(
-        item =>
-          item['Country/Region'] === this.selectedLocation.country &&
-          item['Province/State'] === this.selectedLocation.province
-      )
-      const confirmedTimeline = Object.keys(confirmedData).filter(
-        i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i)
-      )
-      return confirmedTimeline
+        item => item['Country/Region'] === this.selectedLocation.country
+          && item['Province/State'] === this.selectedLocation.province,
+      );
+      return Object.keys(confirmedData).filter(
+        i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i),
+      ).map(date => formatDate(date));
     },
     datasets() {
       const confirmedData = this.data.confirmed.find(
-        item =>
-          item['Country/Region'] === this.selectedLocation.country &&
-          item['Province/State'] === this.selectedLocation.province
-      )
+        item => item['Country/Region'] === this.selectedLocation.country
+          && item['Province/State'] === this.selectedLocation.province,
+      );
       const deathsData = this.data.deaths.find(
-        item =>
-          item['Country/Region'] === this.selectedLocation.country &&
-          item['Province/State'] === this.selectedLocation.province
-      )
+        item => item['Country/Region'] === this.selectedLocation.country
+          && item['Province/State'] === this.selectedLocation.province,
+      );
       const recoveredData = this.data.recovered.find(
-        item =>
-          item['Country/Region'] === this.selectedLocation.country &&
-          item['Province/State'] === this.selectedLocation.province
-      )
+        item => item['Country/Region'] === this.selectedLocation.country
+          && item['Province/State'] === this.selectedLocation.province,
+      );
       const confirmedTimeline = Object.keys(confirmedData)
         .filter(
-          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i)
+          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i),
         )
-        .map(key => confirmedData[key])
+        .map(key => confirmedData[key]);
       const deathsTimeline = Object.keys(deathsData)
         .filter(
-          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i)
+          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i),
         )
-        .map(key => deathsData[key])
+        .map(key => deathsData[key]);
       const recoveredTimeline = Object.keys(recoveredData)
         .filter(
-          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i)
+          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i),
         )
-        .map(key => recoveredData[key])
+        .map(key => recoveredData[key]);
       return [
         {
-          label: 'Confirmed',
+          label: 'Infected',
           data: confirmedTimeline,
           backgroundColor: 'rgba(0, 0, 255, 0.2)',
-          borderColor: 'rgba(0, 0, 255, 0.8)'
+          borderColor: 'rgba(0, 0, 255, 0.8)',
         },
         {
           label: 'Deaths',
           data: deathsTimeline,
           backgroundColor: 'rgba(255, 0, 0, 0.2)',
-          borderColor: 'rgba(255, 0, 0, 0.8)'
+          borderColor: 'rgba(255, 0, 0, 0.8)',
         },
         {
           label: 'Recovered',
           data: recoveredTimeline,
           backgroundColor: 'rgba(0, 255, 0, 0.2)',
-          borderColor: 'rgba(0, 255, 0, 0.8)'
-        }
-      ]
-    }
-  }
-}
+          borderColor: 'rgba(0, 255, 0, 0.8)',
+        },
+      ];
+    },
+  },
+};
 </script>
 
 <style>

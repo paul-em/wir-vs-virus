@@ -11,50 +11,50 @@
 </template>
 
 <script>
-import 'chart.js'
+import 'chart.js';
 
 export default {
   props: {
     datasets: { type: Array, required: true },
-    labels: { type: Array, required: true }
+    labels: { type: Array, required: true },
   },
   data: () => ({
     chart: null,
-    offsets: {}
+    offsets: {},
   }),
   watch: {
     datasets: {
       deep: true,
       handler() {
-        this.chart.data.labels = this.labels
-        this.chart.data.datasets = this.datasets
-        this.chart.update()
-      }
-    }
+        this.chart.data.labels = this.labels;
+        this.chart.data.datasets = this.datasets;
+        this.chart.update();
+      },
+    },
   },
   mounted() {
     this.chart = new window.Chart(this.$refs.chart, {
       type: 'line',
       data: {
         labels: this.labels,
-        datasets: this.datasets
+        datasets: this.datasets,
       },
       options: {
         maintainAspectRatio: false,
         legend: {
-          display: false
+          display: false,
         },
         scales: {
           yAxes: [
             {
-              type: 'linear'
-            }
-          ]
-        }
-      }
-    })
-  }
-}
+              type: 'linear',
+            },
+          ],
+        },
+      },
+    });
+  },
+};
 </script>
 
 <style scoped>
