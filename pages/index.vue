@@ -1,22 +1,23 @@
 <template>
-  <section class="text-center">
+  <section class="text-center p-16">
     <h3>Corona Virus</h3>
     <h1>
       What can <span class="font-black font-serif">I</span> do?
     </h1>
-    <div class="p-4">
+    <div class="pt-8">
       <v-select
         v-model="selectedLocation" 
         :options="locationOptions"
         label="label"/>
+      <div class="py-4">
+        <v-slider 
+          v-model="rValue" />
+      </div>
+      <line-chart
+        v-if="selectedLocation"
+        :datasets="datasets" 
+        :labels="dates"/>
     </div>
-    <div class="p-4">
-      <v-slider v-model="rValue"/>
-    </div>
-    <line-chart
-      v-if="selectedLocation"
-      :datasets="datasets" 
-      :labels="dates"/>
   </section>
 </template>
 
