@@ -1,8 +1,22 @@
+/* @license
+Papa Parse
+v5.1.1
+https://github.com/mholt/PapaParse
+License: MIT
+*/
+
 /*!
   * vue-router v3.1.6
   * (c) 2020 Evan You
   * @license MIT
   */
+
+/*!
+ * Chart.js v2.9.3
+ * https://www.chartjs.org
+ * (c) 2019 Chart.js Contributors
+ * Released under the MIT License
+ */
 
 /*!
  * Vue.js v2.6.11
