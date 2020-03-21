@@ -31,28 +31,36 @@ export default {
         this.chart.update();
       },
     },
+    maxValue() {
+      this.update();
+    },
   },
   mounted() {
-    this.chart = new window.Chart(this.$refs.chart, {
-      type: 'line',
-      data: {
-        labels: this.labels,
-        datasets: this.datasets,
-      },
-      options: {
-        animation: {
-          duration: 0,
+    this.update();
+  },
+  methods: {
+    update() {
+      this.chart = new window.Chart(this.$refs.chart, {
+        type: 'line',
+        data: {
+          labels: this.labels,
+          datasets: this.datasets,
         },
-        maintainAspectRatio: false,
-        scales: {
-          yAxes: [
-            {
-              type: 'linear',
-            },
-          ],
+        options: {
+          animation: {
+            duration: 0,
+          },
+          maintainAspectRatio: false,
+          scales: {
+            yAxes: [
+              {
+                type: 'linear',
+              },
+            ],
+          },
         },
-      },
-    });
+      });
+    },
   },
 };
 </script>

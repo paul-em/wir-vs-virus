@@ -18,7 +18,8 @@
       <line-chart
         v-if="selectedArea"
         :datasets="datasets"
-        :labels="dates"/>
+        :labels="dates"
+        :max-value="population"/>
     </div>
   </section>
 </template>
@@ -30,6 +31,8 @@ import vSlider from 'vue-slider-component';
 import 'vue-slider-component/theme/default.css';
 import Logo from '../components/Logo.vue';
 import LineChart from '../components/LineChart.vue';
+import populations from '../assets/populations';
+
 
 function fill(num) {
   if (num < 10) {
@@ -40,14 +43,13 @@ function fill(num) {
 
 function formatDate(str) {
   const d = new Date(str);
-  return `${d.getFullYear()}-${fill(d.getMonth() + 1)}-${fill(d.getDate())}`;
+  return `${d.getUTCFullYear()}-${fill(d.getUTCMonth() + 1)}-${fill(d.getUTCDate())}`;
 }
-
 
 export default {
   async asyncData({ app: { $loader } }) {
     return {
-      data: await $loader.load(),
+      data: await $loader.loadFromJHU(),
     };
   },
   components: {
@@ -62,53 +64,62 @@ export default {
     rValue: 50,
   }),
   computed: {
+    population() {
+      return populations[this.selectedArea];
+    },
     areaOptions() {
       const areas = [];
+      const missingPopulations = [];
       this.data.forEach((item) => {
         if (item.area) {
           item.area.forEach((area) => {
             if (!areas.includes(area)) {
-              areas.push(area);
+              if (!populations[area]) {
+                if (!missingPopulations.includes(area)) {
+                  missingPopulations.push(area);
+                }
+              } else {
+                areas.push(area);
+              }
             }
           });
         }
       });
+      if (missingPopulations.length) {
+        console.warn('no population data found for', missingPopulations);
+      }
       return areas;
     },
     areaData() {
       const items = this.data
-        .filter(item => item.area && item.area.includes(this.selectedArea))
-        .map(item => ({
-          ...item,
-          date: formatDate(new Date(item.date * 1000)),
-        }));
+        .filter(item => item.area && item.area.includes(this.selectedArea));
       const infected = [];
       const recovered = [];
-      const dead = [];
+      const deaths = [];
       this.dates.forEach((date) => {
         const dateItems = items.filter(item => item.date === date);
         if (!dateItems.length) {
           infected.push(null);
           recovered.push(null);
-          dead.push(null);
+          deaths.push(null);
         } else {
-          let mergedDead = 0;
+          let mergedDeaths = 0;
           let mergedInfected = 0;
           let mergedRecovered = 0;
           dateItems.forEach((item) => {
-            mergedDead += parseInt(item.dead, 10);
+            mergedDeaths += parseInt(item.deaths, 10);
             mergedInfected += parseInt(item.infected, 10);
             mergedRecovered += parseInt(item.recovered, 10);
           });
           infected.push(mergedInfected);
           recovered.push(mergedRecovered);
-          dead.push(mergedDead);
+          deaths.push(mergedDeaths);
         }
       });
       return {
         infected,
         recovered,
-        dead,
+        deaths,
       };
     },
     dates() {
@@ -119,7 +130,6 @@ export default {
       return dates;
     },
     datasets() {
-      console.log(this.areaData);
       return [
         {
           label: 'Infected',
@@ -129,19 +139,27 @@ export default {
         },
         {
           label: 'Infected Prediction',
-          data: [],
+          data: this.$predict.infections(this.areaData.infected, {
+            maxDays: 300,
+            rValue: this.rValue,
+            population: this.population,
+          }),
           backgroundColor: 'rgba(0, 0, 255, 0.01)',
           borderColor: 'rgba(0, 0, 255, 0.2)',
         },
         {
           label: 'Deaths',
-          data: this.areaData.dead,
+          data: this.areaData.deaths,
           backgroundColor: 'rgba(255, 0, 0, 0.2)',
           borderColor: 'rgba(255, 0, 0, 0.8)',
         },
         {
           label: 'Deaths Prediction',
-          data: [],
+          data: this.$predict.deaths(this.areaData.deaths, {
+            maxDays: 300,
+            rValue: this.rValue,
+            population: this.population,
+          }),
           backgroundColor: 'rgba(255, 0, 0, 0.01)',
           borderColor: 'rgba(255, 0, 0, 0.2)',
         },
@@ -153,7 +171,11 @@ export default {
         },
         {
           label: 'Recovered Prediction',
-          data: [],
+          data: this.$predict.recovered(this.areaData.recovered, {
+            maxDays: 300,
+            rValue: this.rValue,
+            population: this.population,
+          }),
           backgroundColor: 'rgba(0, 255, 0, 0.01)',
           borderColor: 'rgba(0, 255, 0, 0.2)',
         },
