@@ -16,9 +16,10 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
-    "@nuxtjs/axios": "^5.0.0"
+    "papaparse": "^5.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.4",
