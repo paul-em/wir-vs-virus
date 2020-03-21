@@ -27,7 +27,8 @@ export default {
       deep: true,
       handler() {
         this.chart.data.labels = this.labels
-        this.update()
+        this.chart.data.datasets = this.datasets
+        this.chart.update()
       }
     }
   },
