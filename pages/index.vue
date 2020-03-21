@@ -1,7 +1,6 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
       <h1 class="title">
         wir-vs-virus
       </h1>
