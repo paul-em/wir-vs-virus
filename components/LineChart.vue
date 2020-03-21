@@ -44,9 +44,6 @@ export default {
           duration: 0,
         },
         maintainAspectRatio: false,
-        legend: {
-          display: false,
-        },
         scales: {
           yAxes: [
             {

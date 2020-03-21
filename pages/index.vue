@@ -6,9 +6,8 @@
     </h1>
     <div class="pt-8">
       <v-select
-        v-model="selectedLocation"
-        :options="locationOptions"
-        label="label"/>
+        v-model="selectedArea"
+        :options="areaOptions"/>
       <div class="py-4">
         <v-slider
           :min="0"
@@ -17,7 +16,7 @@
         {{ rValue }}
       </div>
       <line-chart
-        v-if="selectedLocation"
+        v-if="selectedArea"
         :datasets="datasets"
         :labels="dates"/>
     </div>
@@ -59,20 +58,58 @@ export default {
   },
   data: () => ({
     data: [],
-    selectedLocation: {
-      country: 'China',
-      province: 'Hubei',
-      label: 'China Hubei',
-    },
+    selectedArea: 'China',
     rValue: 50,
   }),
   computed: {
-    locationOptions() {
-      return this.data.confirmed.map(item => ({
-        country: item['Country/Region'],
-        province: item['Province/State'],
-        label: `${item['Country/Region']} ${item['Province/State']}`,
-      }));
+    areaOptions() {
+      const areas = [];
+      this.data.forEach((item) => {
+        if (item.area) {
+          item.area.forEach((area) => {
+            if (!areas.includes(area)) {
+              areas.push(area);
+            }
+          });
+        }
+      });
+      return areas;
+    },
+    areaData() {
+      const items = this.data
+        .filter(item => item.area && item.area.includes(this.selectedArea))
+        .map(item => ({
+          ...item,
+          date: formatDate(new Date(item.date * 1000)),
+        }));
+      const infected = [];
+      const recovered = [];
+      const dead = [];
+      this.dates.forEach((date) => {
+        const dateItems = items.filter(item => item.date === date);
+        if (!dateItems.length) {
+          infected.push(null);
+          recovered.push(null);
+          dead.push(null);
+        } else {
+          let mergedDead = 0;
+          let mergedInfected = 0;
+          let mergedRecovered = 0;
+          dateItems.forEach((item) => {
+            mergedDead += parseInt(item.dead, 10);
+            mergedInfected += parseInt(item.infected, 10);
+            mergedRecovered += parseInt(item.recovered, 10);
+          });
+          infected.push(mergedInfected);
+          recovered.push(mergedRecovered);
+          dead.push(mergedDead);
+        }
+      });
+      return {
+        infected,
+        recovered,
+        dead,
+      };
     },
     dates() {
       const dates = [];
@@ -82,69 +119,41 @@ export default {
       return dates;
     },
     datasets() {
-      const confirmedData = this.data.confirmed.find(
-        item => item['Country/Region'] === this.selectedLocation.country
-          && item['Province/State'] === this.selectedLocation.province,
-      );
-      const deathsData = this.data.deaths.find(
-        item => item['Country/Region'] === this.selectedLocation.country
-          && item['Province/State'] === this.selectedLocation.province,
-      );
-      const recoveredData = this.data.recovered.find(
-        item => item['Country/Region'] === this.selectedLocation.country
-          && item['Province/State'] === this.selectedLocation.province,
-      );
-      const confirmedTimeline = Object.keys(confirmedData)
-        .filter(
-          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i),
-        )
-        .map(key => confirmedData[key]);
-      const deathsTimeline = Object.keys(deathsData)
-        .filter(
-          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i),
-        )
-        .map(key => deathsData[key]);
-      const recoveredTimeline = Object.keys(recoveredData)
-        .filter(
-          i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i),
-        )
-        .map(key => recoveredData[key]);
+      console.log(this.areaData);
       return [
         {
           label: 'Infected',
-          data: confirmedTimeline
-            .map((v, index) => v - recoveredTimeline[index]),
+          data: this.areaData.infected,
           backgroundColor: 'rgba(0, 0, 255, 0.2)',
           borderColor: 'rgba(0, 0, 255, 0.8)',
         },
         {
           label: 'Infected Prediction',
-          data: this.getSimplePrediction(confirmedTimeline
-            .map((v, index) => v - recoveredTimeline[index]), -1),
+          data: [],
           backgroundColor: 'rgba(0, 0, 255, 0.01)',
           borderColor: 'rgba(0, 0, 255, 0.2)',
         },
         {
           label: 'Deaths',
-          data: deathsTimeline,
+          data: this.areaData.dead,
           backgroundColor: 'rgba(255, 0, 0, 0.2)',
           borderColor: 'rgba(255, 0, 0, 0.8)',
         },
         {
           label: 'Deaths Prediction',
-          data: this.getSimplePrediction(deathsTimeline, 1),
+          data: [],
           backgroundColor: 'rgba(255, 0, 0, 0.01)',
           borderColor: 'rgba(255, 0, 0, 0.2)',
         },
         {
           label: 'Recovered',
-          data: recoveredTimeline,
+          data: this.areaData.recovered,
           backgroundColor: 'rgba(0, 255, 0, 0.2)',
           borderColor: 'rgba(0, 255, 0, 0.8)',
         },
         {
           label: 'Recovered Prediction',
-          data: this.getSimplePrediction(recoveredTimeline, 1),
+          data: [],
           backgroundColor: 'rgba(0, 255, 0, 0.01)',
           borderColor: 'rgba(0, 255, 0, 0.2)',
         },
@@ -166,6 +175,21 @@ export default {
     },
   },
 };
+/*
+
+      {
+    "_id": "5e75fa9180efbf028f266e2d",
+    "area": [
+      "Hubei",
+      "Mainland China"
+    ],
+    "date": 1583053999.0,
+    "dead": "2761",
+    "infected": "66907",
+    "recovered": "31536",
+    "source": "JHU"
+  },
+  */
 </script>
 
 <style>
