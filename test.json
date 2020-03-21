@@ -1,0 +1,14 @@
+[
+  {
+    "date": 1583053999,
+    "confirmed": 240,
+    "recovered": 10,
+    "deaths": 2
+  },
+  {
+    "date": 1583063999,
+    "confirmed": 240,
+    "recovered": 10,
+    "deaths": 2
+  }
+]

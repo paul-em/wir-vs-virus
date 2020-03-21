@@ -5,7 +5,7 @@
         wir-vs-virus
       </h1>
       <h2 class="subtitle">
-        Hackaton Project 1757
+        Hackathon Project 1757
       </h2>
       <v-select 
         v-model="selectedLocation" 
