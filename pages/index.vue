@@ -12,6 +12,7 @@
         :options="locationOptions"
         label="label"/>
       <line-chart 
+        v-if="selectedLocation"
         :datasets="datasets" 
         :labels="dates"/>
     </div>
