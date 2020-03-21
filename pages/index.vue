@@ -8,6 +8,10 @@
       <h2 class="subtitle">
         Hackaton Project 1757
       </h2>
+      <v-select 
+        v-model="selectedLocation" 
+        :options="locationOptions"
+        label="label"/>
       <line-chart 
         :datasets="datasets" 
         :labels="dates"/>
@@ -16,6 +20,8 @@
 </template>
 
 <script>
+import vSelect from 'vue-select'
+import 'vue-select/dist/vue-select.css'
 import Logo from '~/components/Logo.vue'
 import LineChart from '~/components/LineChart.vue'
 
@@ -39,15 +45,30 @@ export default {
   },
   components: {
     Logo,
-    LineChart
+    LineChart,
+    vSelect
   },
   data: () => ({
-    data: []
+    data: [],
+    selectedLocation: {
+      country: 'Germany',
+      province: '',
+      label: 'Germany'
+    }
   }),
   computed: {
+    locationOptions() {
+      return this.data.confirmed.map(item => ({
+        country: item['Country/Region'],
+        province: item['Province/State'],
+        label: `${item['Country/Region']} ${item['Province/State']}`
+      }))
+    },
     dates() {
       const confirmedData = this.data.confirmed.find(
-        item => item['Country/Region'] === 'Germany'
+        item =>
+          item['Country/Region'] === this.selectedLocation.country &&
+          item['Province/State'] === this.selectedLocation.province
       )
       const confirmedTimeline = Object.keys(confirmedData).filter(
         i => !['Province/State', 'Country/Region', 'Lat', 'Long'].includes(i)
@@ -56,13 +77,19 @@ export default {
     },
     datasets() {
       const confirmedData = this.data.confirmed.find(
-        item => item['Country/Region'] === 'Germany'
+        item =>
+          item['Country/Region'] === this.selectedLocation.country &&
+          item['Province/State'] === this.selectedLocation.province
       )
       const deathsData = this.data.deaths.find(
-        item => item['Country/Region'] === 'Germany'
+        item =>
+          item['Country/Region'] === this.selectedLocation.country &&
+          item['Province/State'] === this.selectedLocation.province
       )
       const recoveredData = this.data.recovered.find(
-        item => item['Country/Region'] === 'Germany'
+        item =>
+          item['Country/Region'] === this.selectedLocation.country &&
+          item['Province/State'] === this.selectedLocation.province
       )
       const confirmedTimeline = Object.keys(confirmedData)
         .filter(
