@@ -121,8 +121,8 @@ export default {
           label: 'Infected Prediction',
           data: this.getSimplePrediction(confirmedTimeline
             .map((v, index) => v - recoveredTimeline[index]), -1),
-          backgroundColor: 'rgba(0, 0, 255, 0.1)',
-          borderColor: 'rgba(0, 0, 255, 0.5)',
+          backgroundColor: 'rgba(0, 0, 255, 0.01)',
+          borderColor: 'rgba(0, 0, 255, 0.2)',
         },
         {
           label: 'Deaths',
@@ -133,8 +133,8 @@ export default {
         {
           label: 'Deaths Prediction',
           data: this.getSimplePrediction(deathsTimeline, 1),
-          backgroundColor: 'rgba(255, 0, 0, 0.1)',
-          borderColor: 'rgba(255, 0, 0, 0.5)',
+          backgroundColor: 'rgba(255, 0, 0, 0.01)',
+          borderColor: 'rgba(255, 0, 0, 0.2)',
         },
         {
           label: 'Recovered',
@@ -145,8 +145,8 @@ export default {
         {
           label: 'Recovered Prediction',
           data: this.getSimplePrediction(recoveredTimeline, 1),
-          backgroundColor: 'rgba(0, 255, 0, 0.1)',
-          borderColor: 'rgba(0, 255, 0, 0.5)',
+          backgroundColor: 'rgba(0, 255, 0, 0.01)',
+          borderColor: 'rgba(0, 255, 0, 0.2)',
         },
       ];
     },
