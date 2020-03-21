@@ -2,6 +2,8 @@
 
 > Hackaton Project 1757
 
+[https://paul-em.github.io/wir-vs-virus/](https://paul-em.github.io/wir-vs-virus/)
+
 ## Build Setup
 
 ``` bash
