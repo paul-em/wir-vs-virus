@@ -29,14 +29,7 @@
         style="text-align:center"><a><b><span
           lang="de"
           style="font-size:17.0pt;line-height:115%">Interpretationshilfe für die App
-          &quot;WhatCanIdo&quot;</span></b></a><span lang="de"><a
-            id="_anchor_1"
-            class="msocomanchor"
-            onmouseover="msoCommentShow('_anchor_1','_com_1')"
-            onmouseout="msoCommentHide('_com_1')"
-            href="#_msocom_1"
-            language="JavaScript"
-            name="_msoanchor_1">[1]</a>&nbsp;</span></p>
+          &quot;WhatCanIdo&quot;</span></b></a><span lang="de">&nbsp;</span></p>
       <p
         class="MsoNormal"
         style="text-align:justify"><span lang="de"/>&nbsp;</p>
@@ -268,87 +261,91 @@
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">&nbsp;</span></p>
+        style="text-align:justify"><b><span lang="de">&nbsp;</span></b></p>
 
       <p
         class="MsoNormal"
         align="center"
         style="text-align:center"><a><b><span
           lang="de"
-          style="font-size:17.0pt;line-height:115%">Interpretation aid for the &quot;WhatCanIdo&quot; app</span></b></a><span lang="de"><a
-            id="_anchor_1"
-            class="msocomanchor"
-            onmouseover="msoCommentShow('_anchor_1','_com_1')"
-            onmouseout="msoCommentHide('_com_1')"
-            href="#_msocom_1"
-            language="JavaScript"
-            name="_msoanchor_1">[1]</a>&nbsp;</span></p>
-
+          style="font-size:17.0pt;line-height:115%">Interpretation aid for the &quot;WhatCanIdo&quot; app</span></b></a><span lang="de">&nbsp;</span></p>
       <p
         class="MsoNormal"
-        style="text-align:justify"><b><span lang="de">Objective</span></b><span
-          lang="de">: The aim of this app is to sensitize people in Germany to the fact
+        style="text-align:justify"><span lang="de"/>&nbsp;</p>
+      <p
+        class="MsoNormal"
+        style="text-align:justify"><b><span lang="de">Objective: </span></b><span
+          lang="de">The aim of this app is to sensitize people in Germany to the fact
           that social distancing in the context of the COVID 19 crisis makes sense.</span></p>
+      <p
+        class="MsoNormal"
+        style="text-align:justify"><span lang="de"/>&nbsp;</p>
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de"/></p>
-
-      <p
-        class="MsoNormal"
-        style="text-align:justify"><b><span lang="de">Statement</span></b><span
-          lang="de">: The basic statement that can be derived from the app is that by
+        style="text-align:justify"><b><span lang="de">Statement: </span></b><span
+          lang="de">The basic statement that can be derived from the app is that by
           keeping more physical distance between us all, we all are able to save lives
           during an epidemic.</span></p>
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de"/></p>
+        style="text-align:justify"><span lang="de"/>&nbsp;</p>
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">Limitations on the
-        validity of the numbers: The numbers should be considered as rough tendencies
+        style="text-align:justify"><b><span lang="de">Limitations on the
+        validity of the numbers: </span></b><span lang="de"> The numbers should be considered as rough tendencies
         at best, to compare and illustrate possible scenarios (more vs. less social
         distance). The aim of the app is qualitative statements, not quantitative ones.
         Thus, no precise statements about the case numbers are to be made. Furthermore,
-        COVID-19 is a novel virus that needs further research in many respects. </span></p>
+        COVID-19 is a novel virus that needs further research in many respects.</span></p>
 
       <p
         class="MsoNormal"
         style="text-align:justify"><span lang="de">&nbsp;</span></p>
 
-      <h3 style="text-align:justify"><a name="_r7r0qt3xgc7"/><span lang="de">The
-      following limitations concerning the validity apply in particular...</span></h3>
+      <p
+        class="MsoNormal"
+        style="text-align:justify"><span lang="de">&nbsp;</span></p>
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">... <b>for the
-        slider:</b></span></p>
+        style="text-align:justify"><span lang="de">&nbsp;</span></p>
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">... While the
+        style="text-align:justify"><span lang="de"/></p>
+
+      <p
+        class="MsoNormal"
+        style="text-align:justify"><b><span lang="de">The following limitations concerning the validity apply in particular:</span></b></p>
+      <p
+        class="MsoNormal"
+        style="text-align:justify"><b><span lang="de">&nbsp;</span></b></p>
+
+      <p
+        class="MsoNormal"
+        style="margin-left:36.0pt;text-align:justify;text-indent:
+-18.0pt"><span lang="de"><b>For the slider:</b><span style="font:7.0pt &quot;">&nbsp;
+        </span></span><span lang="de">While the
         mechanisms of the measures are mapped in the model and the tendencies of a
         measure can be shown, in many places it is greatly simplified. The exact effects
         of individual scenarios (closure of clubs, restaurants, avoidance of
         handshakes) are not known and have been greatly simplified for modelling
         purposes. For example, it is known that viruses can spread strongly at large
         events, but the exact number of people who can be infected varies from event to
-        event. </span></p>
+        event.</span></p>
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">&nbsp;</span></p>
+        style="text-align:justify"><b><span lang="de">&nbsp;</span></b></p>
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">...<b> for the
-        number of people infected:</b></span></p>
-
-      <p
-        class="MsoNormal"
-        style="text-align:justify"><span lang="de">... The number of
+        style="margin-left:36.0pt;text-align:justify;text-indent:
+-18.0pt"><span lang="de"><b>For the number of people infected:</b><span style="font:7.0pt &quot;">&nbsp;
+        </span></span><span lang="de">The number of
         infected persons is by no means to be understood as the exact number of
         infections to be expected. Rather, it should be made clear how individual
         measures affect the number of infected persons. </span></p>
@@ -359,12 +356,9 @@
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">... <b>for the
-        death toll:</b></span></p>
-
-      <p
-        class="MsoNormal"
-        style="text-align:justify"><span lang="de">... The number of
+        style="margin-left:36.0pt;text-align:justify;text-indent:
+-18.0pt"><span lang="de"><b>For the death toll:</b><span style="font:7.0pt &quot;">&nbsp;
+        </span></span><span lang="de">The number of
         deaths should in no way be taken as an exact figure to be expected. Rather, it
         should be made clear that individual measures will affect the number of deaths.
         It is important that each individual adheres to measures to reduce the spread
@@ -372,55 +366,21 @@
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de"/></p>
+        style="text-align:justify"><span lang="de">&nbsp;</span></p>
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">... <b>for the time
-        at which the measures take effect:</b></span></p>
-
-      <p
-        class="MsoNormal"
-        style="text-align:justify"><span lang="de">... There is
-        already a high rate of unreported cases of infection, but no statistics...</span></p>
-
-      <p
-        class="MsoNormal"
-        style="text-align:justify"><span lang="de">... This will lead
-        to a further increase in confirmed cases and deaths even after measures such as
-        a curfew come into effect. It is quite possible that the apparent increase will
-        accelerate even further for a few days before it subsides ...</span></p>
-
-      <p
-        class="MsoNormal"
-        style="text-align:justify"><span lang="de">... But this does
-        not mean that the measures are ineffective! A significant proportion of the
-        newly reported cases will have been infected before these measures were taken
-        ...</span></p>
-
-      <p
-        class="MsoNormal"
-        style="text-align:justify"><span lang="de">... There are many
+        style="margin-left:36.0pt;text-align:justify;text-indent:
+-18.0pt"><span lang="de"><b>For the time at which the measures take effect:</b><span style="font:7.0pt &quot;">&nbsp; </span></span><span lang="de">There is already a high rate of unreported cases of infection, but no statistics. This will lead to a further increase in confirmed cases and deaths even after measures such as a curfew come into effect. It is quite possible that the apparent increase will accelerate even further for a few days before it subsides. But this does
+        not mean that the measures are ineffective! A significant proportion of the newly reported cases will have been infected before these measures were taken. There are many
         reasons for the high number of unreported cases: time delay due to the
         evaluation period of the tests, capacity limits of the testing authorities (in
         some cases, only persons who show symptoms AND have had contact with a
         confirmed case are already being tested), &quot;silent&quot; infection by persons
-        who do not show any symptoms themselves, etc </span></p>
-
+        who do not show any symptoms themselves, etc.</span></p>
       <p
         class="MsoNormal"
         style="text-align:justify"><a><span lang="de">&nbsp;</span></a></p>
-
-      <p
-        class="MsoNormal"
-        style="text-align:justify"><span lang="de"><a
-          id="_anchor_2"
-          class="msocomanchor"
-          onmouseover="msoCommentShow('_anchor_2','_com_2')"
-          onmouseout="msoCommentHide('_com_2')"
-          href="#_msocom_2"
-          language="JavaScript"
-          name="_msoanchor_2">[2]</a>&nbsp;</span></p>
 
       <p
         class="MsoNormal"
