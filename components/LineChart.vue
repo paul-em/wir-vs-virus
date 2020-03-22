@@ -68,6 +68,12 @@ export default {
             yAxes: [
               {
                 type: 'linear',
+                ticks: {
+                  callback(value) {
+                    return parseInt(value, 10).toLocaleString(navigator.language,
+                      { useGrouping: true });
+                  },
+                },
               },
             ],
           },
