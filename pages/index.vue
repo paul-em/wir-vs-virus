@@ -187,7 +187,7 @@ export default {
             this.areaData.infected,
             this.prediction.timelines.map(item => item.infected),
           ),
-          backgroundColor: 'rgba(0, 0, 255, 0.01)',
+          backgroundColor: 'rgba(0, 0, 255, 0.1)',
           borderColor: 'rgba(0, 0, 255, 0.2)',
         },
         {
@@ -202,7 +202,7 @@ export default {
             this.areaData.deaths,
             this.prediction.timelines.map(item => item.deaths),
           ),
-          backgroundColor: 'rgba(255, 0, 0, 0.01)',
+          backgroundColor: 'rgba(255, 0, 0, 0.1)',
           borderColor: 'rgba(255, 0, 0, 0.2)',
         },
         {
@@ -217,7 +217,7 @@ export default {
             this.areaData.recovered,
             this.prediction.timelines.map(item => item.recovered),
           ),
-          backgroundColor: 'rgba(0, 255, 0, 0.01)',
+          backgroundColor: 'rgba(0, 255, 0, 0.1)',
           borderColor: 'rgba(0, 255, 0, 0.2)',
         },
       ];
