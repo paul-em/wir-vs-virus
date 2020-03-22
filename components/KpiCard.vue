@@ -8,7 +8,7 @@
     <label>{{ label }}</label>
     <div>
       <div class="text-xl px-2">
-        {{ formatNumber(value) }}
+        {{ formatNumber(value) }}*
       </div>
       <div class="px-2 text-green">
         -{{ formatNumber(worstCaseValue - value) }}
