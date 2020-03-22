@@ -17,30 +17,39 @@
       <div>
         Deaths: {{ formatNumber(deaths) }}
       </div>
-      All
-      <line-chart
-        v-if="selectedArea"
-        :datasets="datasets"
-        :labels="dates"
-        :max-value="population"/>
-      Infected
-      <line-chart
-        v-if="selectedArea"
-        :datasets="[datasets[0], datasets[1]]"
-        :labels="dates"
-        :max-value="population"/>
-      Deaths
-      <line-chart
-        v-if="selectedArea"
-        :datasets="[datasets[2], datasets[3]]"
-        :labels="dates"
-        :max-value="population"/>
-      Recovered
-      <line-chart
-        v-if="selectedArea"
-        :datasets="[datasets[4], datasets[5]]"
-        :labels="dates"
-        :max-value="population"/>
+      <div v-if="showAll">
+        All
+        <line-chart
+          v-if="selectedArea"
+          :datasets="[datasets[0], datasets[1], datasets[2], datasets[3]]"
+          :labels="dates"
+          :max-value="population"/>
+      </div>
+      <div v-else>
+        Infected
+        <line-chart
+          v-if="selectedArea"
+          :datasets="[datasets[0], datasets[1]]"
+          :labels="dates"
+          :max-value="population"/>
+        Deaths
+        <line-chart
+          v-if="selectedArea"
+          :datasets="[datasets[2], datasets[3]]"
+          :labels="dates"
+          :max-value="population"/>
+        Recovered
+        <line-chart
+          v-if="selectedArea"
+          :datasets="[datasets[4], datasets[5]]"
+          :labels="dates"
+          :max-value="population"/>
+      </div>
+      <button
+        class="p-3 my-2 text-sm bg-grey-light hover:bg-grey-lighter rounded-sm uppercase"
+        @click="showAll = !showAll">
+        {{ showAll ? 'Show Separate': 'Show Combinded' }}
+      </button>
     </div>
   </section>
 </template>
@@ -83,6 +92,7 @@ export default {
     data: [],
     selectedArea: 'Germany',
     rValue: 50,
+    showAll: true,
   }),
   computed: {
     population() {
@@ -203,12 +213,10 @@ export default {
         },
         {
           label: 'Recovered Prediction',
-          /*
           data: this.align(
             this.areaData.recovered,
             this.prediction.timelines.map(item => item.recovered),
           ),
-          */
           backgroundColor: 'rgba(0, 255, 0, 0.01)',
           borderColor: 'rgba(0, 255, 0, 0.2)',
         },
