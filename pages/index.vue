@@ -6,14 +6,17 @@
       <github-corner url="https://github.com/paul-em/wir-vs-virus"/>
     </header>
     <div class="pt-8">
-      <v-select
-        v-model="selectedArea"
-        :options="areaOptions"/>
+      <div class="max-w-xs">
+        <v-select
+          v-model="selectedArea"
+          :options="areaOptions"/>
+      </div>
       <div class="py-4">
         <v-slider
           :min="0"
           :max="100"
           v-model="rValue"/>
+        <measures-view :r-value="rValue"/>
       </div>
       <div class="p-4 flex justify-center">
         <kpi-card
@@ -72,6 +75,7 @@ import KpiCard from '../components/KpiCard.vue';
 import HackathonLogo from '../components/HackathonLogo.vue';
 import AppLogo from '../components/AppLogo.vue';
 import GithubCorner from '../components/GithubCorner.vue';
+import MeasuresView from '../components/MeasuresView.vue';
 import populations from '../assets/populations';
 
 
@@ -101,6 +105,7 @@ export default {
     vSlider,
     HackathonLogo,
     GithubCorner,
+    MeasuresView,
     AppLogo,
   },
   data: () => ({
