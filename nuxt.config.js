@@ -26,6 +26,24 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: `${routerPath}favicon.ico` },
+      {
+        rel: 'apple-touch-icon',
+        type: 'image/png',
+        sizes: '180x180',
+        href: `${routerPath}apple-touch-icon.png`,
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: `${routerPath}favicon-32x32.png`,
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: `${routerPath}favicon-16x16.png`,
+      },
     ],
   },
 
@@ -50,6 +68,7 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
+    '@nuxtjs/pwa',
   ],
   /*
   ** Axios module configuration
