@@ -14,9 +14,16 @@
           :max="100"
           v-model="rValue"/>
       </div>
-      <div>
-        Deaths: {{ formatNumber(deaths) }}
+      <div class="p-4 flex justify-center">
+        <kpi-card
+          :value="prediction.totalInfected"
+          label="Infected"/>
+        <kpi-card
+          :value="prediction.totalDeaths"
+          label="Deaths"/>
       </div>
+    </div>
+    <div>
       <div v-if="showAll">
         All
         <line-chart
@@ -61,6 +68,7 @@ import vSlider from 'vue-slider-component';
 import 'vue-slider-component/theme/default.css';
 import Logo from '../components/Logo.vue';
 import LineChart from '../components/LineChart.vue';
+import KpiCard from '../components/KpiCard.vue';
 import populations from '../assets/populations';
 
 
@@ -86,6 +94,7 @@ export default {
   components: {
     Logo,
     LineChart,
+    KpiCard,
     vSelect,
     vSlider,
   },
@@ -254,9 +263,6 @@ export default {
         ...offset,
         ...used,
       ];
-    },
-    formatNumber(num) {
-      return Math.floor(num).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
     },
   },
 };
