@@ -30,7 +30,7 @@ export default {
           value: 10,
         },
         {
-          label: 'Home office',
+          label: 'Less than 2m distance',
           value: 20,
         },
         {
