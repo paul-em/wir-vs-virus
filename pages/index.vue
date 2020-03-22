@@ -1,10 +1,17 @@
 <template>
   <section class="text-center p-16 min-w-l">
-    <header class="flex">
+    <header class="flex justify-between items-center flex-column md:flex-row">
       <hackathon-logo/>
       <app-logo/>
-      <github-corner url="https://github.com/paul-em/wir-vs-virus"/>
+      <div class="flex justify-center">
+        <div class="inline-block min-w-s p-4">
+          <v-select
+            v-model="selectedArea"
+            :options="areaOptions"/>
+        </div>
+      </div>
     </header>
+    <github-corner url="https://github.com/paul-em/wir-vs-virus"/>
     <div class="pt-8">
       <div class="py-4">
         <v-slider
@@ -18,11 +25,6 @@
         <measures-view :r-value="rValue"/>
       </div>
       <div>
-        <div class="inline-block min-w-s p-4">
-          <v-select
-            v-model="selectedArea"
-            :options="areaOptions"/>
-        </div>
         <div class="p-4 flex justify-center">
           <kpi-card
             :value="prediction.totalInfected"

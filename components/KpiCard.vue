@@ -1,12 +1,12 @@
 <template>
-  <div class="py-4 px-8 m-2 shadow-lg">
+  <div class="py-4 px-8 m-2 shadow-lg flex justify-center items-center">
     <div class="text-center">
       <img
         v-if="img"
         :src="img">
     </div>
     <label>{{ label }}</label>
-    <div class="inline-block text-xl">{{ formatNumber(value) }}</div>
+    <div class="inline-block text-xl p-2">{{ formatNumber(value) }}</div>
   </div>
 </template>
 
