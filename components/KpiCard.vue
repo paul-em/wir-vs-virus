@@ -6,7 +6,14 @@
         :src="img">
     </div>
     <label>{{ label }}</label>
-    <div class="inline-block text-xl p-2">{{ formatNumber(value) }}</div>
+    <div>
+      <div class="text-xl px-2">
+        {{ formatNumber(value) }}
+      </div>
+      <div class="px-2 text-green">
+        -{{ formatNumber(worstCaseValue - value) }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -15,6 +22,7 @@ export default {
   props: {
     label: { type: String, required: true },
     value: { type: Number, default: 0 },
+    worstCaseValue: { type: Number, default: 0 },
     img: { type: String, default: null },
   },
   methods: {

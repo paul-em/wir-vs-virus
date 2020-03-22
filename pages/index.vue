@@ -27,10 +27,12 @@
         <div class="p-4 flex justify-center">
           <kpi-card
             :value="prediction.totalInfected"
+            :worst-case-value="worstCasePrediction.totalInfected"
             label="Infected"
             img="maxinfect.png"/>
           <kpi-card
             :value="prediction.totalDeaths"
+            :worst-case-value="worstCasePrediction.totalDeaths"
             label="Deaths"
             img="deaths.png"/>
         </div>
@@ -198,6 +200,13 @@ export default {
     prediction() {
       return this.$predict({
         rValue: this.rValue,
+        population: this.population,
+        day: this.daySinceOutbreak,
+      });
+    },
+    worstCasePrediction() {
+      return this.$predict({
+        rValue: 100,
         population: this.population,
         day: this.daySinceOutbreak,
       });
