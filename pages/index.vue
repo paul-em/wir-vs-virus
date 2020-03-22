@@ -29,7 +29,7 @@
           <kpi-card
             :value="prediction.totalInfected"
             label="Infected"
-            img="maxInfect.png"/>
+            img="maxinfect.png"/>
           <kpi-card
             :value="prediction.totalDeaths"
             label="Deaths"
@@ -39,7 +39,6 @@
     </div>
     <div>
       <div v-if="showAll">
-        All
         <line-chart
           v-if="selectedArea"
           :datasets="[datasets[0], datasets[1], datasets[2], datasets[3]]"
