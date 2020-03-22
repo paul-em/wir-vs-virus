@@ -5,6 +5,7 @@
       :key="measure.label"
       :class="{
         'line-through': measure.value > rValue,
+        'opacity-50': measure.value > rValue,
       }"
       class="p-2 flex-1">
       {{ measure.label }}
