@@ -160,7 +160,7 @@ export default {
     },
     dates() {
       const dates = [];
-      for (let day = 0; day < 300; day += 1) {
+      for (let day = 0; day < 200; day += 1) {
         dates.push(formatDate(new Date(2020, 0, 22 + day)));
       }
       return dates;
@@ -243,7 +243,7 @@ export default {
     },
     align(actual, predicted) {
       const index = actual.findIndex(item => item === null);
-      const lastValue = actual[index - 1];
+      const lastValue = actual[index - 2];
       const used = predicted.filter(val => val > lastValue);
       const offset = [];
       for (let i = 0; i < index - 1; i += 1) {
