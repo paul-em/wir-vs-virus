@@ -1,10 +1,10 @@
 <template>
   <section class="text-center p-16">
-    <hackathon-logo/>
-    <h3>Corona Virus</h3>
-    <h1>
-      What can <span class="font-black font-serif">I</span> do?
-    </h1>
+    <header class="flex">
+      <hackathon-logo/>
+      <app-logo/>
+      <github-corner url="https://github.com/paul-em/wir-vs-virus"/>
+    </header>
     <div class="pt-8">
       <v-select
         v-model="selectedArea"
@@ -70,6 +70,8 @@ import 'vue-slider-component/theme/default.css';
 import LineChart from '../components/LineChart.vue';
 import KpiCard from '../components/KpiCard.vue';
 import HackathonLogo from '../components/HackathonLogo.vue';
+import AppLogo from '../components/AppLogo.vue';
+import GithubCorner from '../components/GithubCorner.vue';
 import populations from '../assets/populations';
 
 
@@ -98,6 +100,8 @@ export default {
     vSelect,
     vSlider,
     HackathonLogo,
+    GithubCorner,
+    AppLogo,
   },
   data: () => ({
     cases: [],
