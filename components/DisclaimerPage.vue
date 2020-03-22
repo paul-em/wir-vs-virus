@@ -615,4 +615,8 @@ background:white">Recall ist in diesem Fall wichtig, weil die Anzahl von false
 img {
   max-height: 100px;
 }
+
+.block-text {
+  text-align: justify;
+}
 </style>
