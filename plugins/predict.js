@@ -133,14 +133,14 @@ function getSolution(N, InterventionAmt, InterventionTime) {
 
 export default (app, inject) => {
   inject('predict', ({ population, rValue }) => {
-    const solution = getSolution(population, 1 - (rValue / 100), 100);
+    const solution = getSolution(population, 1 - (rValue / 100), 120);
     //    Dead   Hospital          Recovered        Infected   Exposed
     return {
       ...solution,
       timelines: solution.P.map(item => ({
-        deaths: item[0],
-        recovered: item[2],
-        infected: item[3],
+        deaths: Math.round(item[0]),
+        recovered: Math.round(item[2]),
+        infected: Math.round(item[3]),
       })),
     };
   });
