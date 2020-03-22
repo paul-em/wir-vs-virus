@@ -244,7 +244,8 @@ export default {
     align(actual, predicted) {
       const index = actual.findIndex(item => item === null);
       const lastValue = actual[index - 2];
-      const used = predicted.filter(val => val > lastValue);
+      const cutoffPoint = predicted.findIndex(val => val > lastValue);
+      const used = predicted.slice(cutoffPoint);
       const offset = [];
       for (let i = 0; i < index - 1; i += 1) {
         offset.push(null);
