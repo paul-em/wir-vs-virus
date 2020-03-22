@@ -17,6 +17,9 @@
     <div
       :style="{ width: calcWorstCasePercent() + '%' }"
       class="worst-case-percent"/>
+    <div class="worst-case-label">
+      {{ $t('label.worst-case-precent') }}
+    </div>
   </div>
 </template>
 
@@ -53,5 +56,14 @@ export default {
     bottom: 0;
     background-color: rgb(255, 204, 204);
     z-index: -1;
+  }
+  .worst-case-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-style: italic;
+    color: rgb(102, 102, 102);
   }
 </style>
