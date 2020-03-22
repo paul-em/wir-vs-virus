@@ -10,7 +10,7 @@
         <v-slider
           :min="0"
           :max="100"
-          :steps="10"
+          :interval="10"
           :dot-size="20"
           v-model="rValue"
           lazy/>
