@@ -1,5 +1,5 @@
 <template>
-  <section class="text-center p-16">
+  <section class="text-center p-16 min-w-l">
     <header class="flex">
       <hackathon-logo/>
       <app-logo/>
@@ -26,10 +26,12 @@
         <div class="p-4 flex justify-center">
           <kpi-card
             :value="prediction.totalInfected"
-            label="Infected"/>
+            label="Infected"
+            img="maxInfect.png"/>
           <kpi-card
             :value="prediction.totalDeaths"
-            label="Deaths"/>
+            label="Deaths"
+            img="deaths.png"/>
         </div>
       </div>
     </div>
