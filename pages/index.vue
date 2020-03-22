@@ -17,7 +17,6 @@
         <v-slider
           :min="0"
           :max="100"
-          :interval="10"
           :dot-size="28"
           v-model="rValue"
           tooltip="none"
