@@ -137,15 +137,22 @@ export default (app, inject) => {
     //    Dead   Hospital          Recovered        Infected   Exposed
     const lastItem = solution.P[solution.P.length - 1];
     const Iter = solution.Iters[solution.Iters.length - 1];
+    let maxInfected = 0;
+    const timelines = solution.Iters.map((Iter) => {
+      const infected = Math.round(population * Iter[2]);
+      maxInfected = Math.max(maxInfected, infected);
+      return {
+        deaths: Math.round(population * Iter[9]),
+        recovered: Math.round(population * (Iter[7] + Iter[8])),
+        infected,
+      };
+    });
     return {
       ...solution,
       totalInfected: Math.round(population * (1 - Iter[0] - Iter[1] - Iter[2]) + I0),
       totalDeaths: Math.round(lastItem[0]),
-      timelines: solution.Iters.map(Iter => ({
-        deaths: Math.round(population * Iter[9]),
-        recovered: Math.round(population * (Iter[7] + Iter[8])),
-        infected: Math.round(population * Iter[2]),
-      })),
+      maxInfected,
+      timelines,
     };
   });
 };
