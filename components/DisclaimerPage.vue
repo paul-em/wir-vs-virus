@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center px-8 max-w-lg m-auto">
+  <div class="flex flex-col justify-center px-8 max-w-lg m-auto block-text">
     <p class="p-4 text-bold bg-grey-light rounded text-sm leading-normal">
       Disclaimer: Ziel der App ist es nicht, genaue Aussagen über den Epidemieverlauf des COVID-19 zu treffen. Vielmehr sollen die tendenzielle Auswirkungen von Maßnahmen, die jeder einzelne durchführen kann, visualisiert werden.
       Aktuelle Informationen finden Sie auf der Website der WHO (https://www.who.int/) und dem Robert Koch-Institut (https://www.rki.de/).
@@ -73,5 +73,9 @@
 <style scoped>
 img {
   max-height: 100px;
+}
+
+.block-text {
+  text-align: justify;
 }
 </style>
