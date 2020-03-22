@@ -66,7 +66,7 @@
           :max-value="population"/>
       </div>
       <button
-        class="p-3 my-2 text-sm bg-grey-light hover:bg-grey-lighter rounded-sm uppercase"
+        class="p-3 my-2 text-sm hover:bg-grey-lighter rounded-sm uppercase"
         @click="showAll = !showAll">
         {{ showAll ? 'Show Separate': 'Show Combinded' }}
       </button>
