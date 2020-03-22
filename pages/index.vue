@@ -49,7 +49,7 @@
       <div v-if="showAll">
         <line-chart
           v-if="selectedArea"
-          :datasets="[datasets[0], datasets[1], datasets[2], datasets[3]]"
+          :datasets="[datasets['infected'], datasets['infected_prediction'], datasets['deaths'], datasets['deaths_prediction']]"
           :labels="dates"
           :max-value="population"/>
       </div>
@@ -57,19 +57,19 @@
         Infected
         <line-chart
           v-if="selectedArea"
-          :datasets="[datasets[0], datasets[1]]"
+          :datasets="[datasets['infected'], datasets['infected_prediction']]"
           :labels="dates"
           :max-value="population"/>
         Deaths
         <line-chart
           v-if="selectedArea"
-          :datasets="[datasets[2], datasets[3]]"
+          :datasets="[datasets['deaths'], datasets['deaths_prediction']]"
           :labels="dates"
           :max-value="population"/>
         Recovered
         <line-chart
           v-if="selectedArea"
-          :datasets="[datasets[4], datasets[5]]"
+          :datasets="[datasets['recovered'], datasets['recovered_prediction']]"
           :labels="dates"
           :max-value="population"/>
       </div>
@@ -236,14 +236,14 @@ export default {
       return this.prediction.timelines[this.prediction.timelines.length - 1].deaths;
     },
     datasets() {
-      return [
-        {
+      return {
+        infected: {
           label: this.$t('label.infected'),
           data: this.areaCases.infected,
           backgroundColor: 'rgba(0, 0, 255, 0.2)',
           borderColor: 'rgba(0, 0, 255, 0.8)',
         },
-        {
+        infected_prediction: {
           label: this.$t('label.infected-prediction'),
           data: this.align(
             this.areaCases.infected,
@@ -252,13 +252,13 @@ export default {
           backgroundColor: 'rgba(0, 0, 255, 0.1)',
           borderColor: 'rgba(0, 0, 255, 0.2)',
         },
-        {
+        deaths: {
           label: this.$t('label.deaths'),
           data: this.areaCases.deaths,
           backgroundColor: 'rgba(255, 0, 0, 0.2)',
           borderColor: 'rgba(255, 0, 0, 0.8)',
         },
-        {
+        deaths_prediction: {
           label: this.$t('label.deaths-prediction'),
           data: this.align(
             this.areaCases.deaths,
@@ -267,13 +267,13 @@ export default {
           backgroundColor: 'rgba(255, 0, 0, 0.1)',
           borderColor: 'rgba(255, 0, 0, 0.2)',
         },
-        {
+        recovered: {
           label: this.$t('label.recovered'),
           data: this.areaCases.recovered,
           backgroundColor: 'rgba(0, 255, 0, 0.2)',
           borderColor: 'rgba(0, 255, 0, 0.8)',
         },
-        {
+        recovered_prediction: {
           label: this.$t('label.recovered-prediction'),
           data: this.align(
             this.areaCases.recovered,
@@ -282,7 +282,7 @@ export default {
           backgroundColor: 'rgba(0, 255, 0, 0.1)',
           borderColor: 'rgba(0, 255, 0, 0.2)',
         },
-      ];
+      };
     },
   },
   methods: {
