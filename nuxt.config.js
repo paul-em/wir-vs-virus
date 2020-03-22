@@ -60,7 +60,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~/plugins/loader', '~/plugins/predict'],
+  plugins: ['~/plugins/loader', '~/plugins/predict', '~/plugins/i18n.js'],
 
   /*
   ** Nuxt.js modules
@@ -95,5 +95,6 @@ module.exports = {
         });
       }
     },
+    vendor: ['vue-i18n'],
   },
 };

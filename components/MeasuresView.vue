@@ -22,47 +22,47 @@ export default {
     measures() {
       return [
         {
-          label: 'Stay at home',
+          label: this.$t('slider.stay-at-home'),
           value: 0,
         },
         {
-          label: 'Going for a run alone',
+          label: this.$t('slider.going-for-run-alone'),
           value: 10,
         },
         {
-          label: 'Less than 2m distance',
+          label: this.$t('slider.less-than-2m-distance'),
           value: 20,
         },
         {
-          label: 'Shake hands',
+          label: this.$t('slider.shake-hands'),
           value: 30,
         },
         {
-          label: 'Going out to dine with friends',
+          label: this.$t('slider.going-out-dine-with-friends'),
           value: 40,
         },
         {
-          label: 'Shopping',
+          label: this.$t('slider.shopping'),
           value: 50,
         },
         {
-          label: 'Hug and Kiss when you meet friends',
+          label: this.$t('slider.hug-kiss-with-friends'),
           value: 60,
         },
         {
-          label: 'Flat Party',
+          label: this.$t('slider.flat-party'),
           value: 70,
         },
         {
-          label: 'Daily Canteen Visit',
+          label: this.$t('slider.daily-canteen-visit'),
           value: 80,
         },
         {
-          label: 'Go Clubbing',
+          label: this.$t('slider.go-clubbing'),
           value: 90,
         },
         {
-          label: 'Visit a Festival',
+          label: this.$t('slider.visit-festival'),
           value: 100,
         },
       ];
