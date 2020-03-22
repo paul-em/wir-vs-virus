@@ -466,33 +466,6 @@ background:white">Recall ist in diesem Fall wichtig, weil die Anzahl von false
     </div>
 
     <div>
-
-      <hr
-        class="msocomoff"
-        align="left"
-        size="1"
-        width="33%">
-
-      <div>
-
-        <div
-          id="_com_1"
-          class="msocomtxt"
-          language="JavaScript"
-          onmouseover="msoCommentShow('_anchor_1','_com_1')"
-          onmouseout="msoCommentHide('_com_1')"><a name="_msocom_1"/>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">Gebt ihr mir auf slack bitte bescheid wenn das ready ist
-              zum einfügen? thx</span></p>
-
-        </div>
-
-      </div>
-
       <div>
 
         <div
