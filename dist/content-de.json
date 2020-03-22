@@ -9,7 +9,8 @@
     "region": "Region",
     "language": "Sprache",
     "show-separate": "getrennt anzeigen",
-    "show-combined": "gemeinsam anzeigen"
+    "show-combined": "gemeinsam anzeigen",
+    "worst-case-precent": "% schlimmster Fall"
   },
   "slider": {
     "stay-at-home": "Zu Hause bleiben",

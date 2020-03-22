@@ -9,7 +9,8 @@
     "region": "Region",
     "language": "Language",
     "show-separate": "Show Separate",
-    "show-combined": "Show Combinded"
+    "show-combined": "Show Combinded",
+    "worst-case-precent": "% worst-case"
   },
   "slider": {
     "stay-at-home": "Stay at home",
