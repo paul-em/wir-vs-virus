@@ -72,6 +72,7 @@
         {{ showAll ? 'Show Separate': 'Show Combinded' }}
       </button>
     </div>
+    <disclaimer-page/>
   </section>
 </template>
 
@@ -86,6 +87,7 @@ import HackathonLogo from '../components/HackathonLogo.vue';
 import AppLogo from '../components/AppLogo.vue';
 import GithubCorner from '../components/GithubCorner.vue';
 import MeasuresView from '../components/MeasuresView.vue';
+import DisclaimerPage from '../components/DisclaimerPage.vue';
 import populations from '../assets/populations';
 
 
@@ -116,6 +118,7 @@ export default {
     HackathonLogo,
     GithubCorner,
     MeasuresView,
+    DisclaimerPage,
     AppLogo,
   },
   data: () => ({

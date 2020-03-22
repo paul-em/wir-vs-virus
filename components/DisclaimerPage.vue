@@ -1,8 +1,72 @@
 <template>
-  <div class="flex flex-col justify-center px-8">
-    <span class="c8 c6">Interpretationshilfe f&uuml;r die App &bdquo;WhatCanIdo&ldquo;</span>
+  <div class="flex flex-col justify-center px-8 max-w-lg m-auto">
+    <p class="p-4 text-bold bg-grey-light rounded text-sm leading-normal">
+      Disclaimer: Ziel der App ist es nicht, genaue Aussagen über den Epidemieverlauf des COVID-19 zu treffen. Vielmehr sollen die tendenzielle Auswirkungen von Maßnahmen, die jeder einzelne durchführen kann, visualisiert werden.
+      Aktuelle Informationen finden Sie auf der Website der WHO (https://www.who.int/) und dem Robert Koch-Institut (https://www.rki.de/).
     </p>
-    <p class="c2 c9"><span class="c6 c8"/></p><p class="c0"><span class="c6">Ziel: </span><span class="c3">Diese App verfolgt das Ziel, Menschen in Deutschland daf&uuml;r zu sensibilisieren, dass soziale Distanzierung im Rahmen der COVID-19-Krise sinnvoll, ist.</span></p><p class="c0"><span class="c3">&nbsp;</span></p><p class="c0"><span class="c6">Aussage: </span><span class="c3">Die grundlegende Aussage, die sich aus der App ableiten l&auml;sst ist, dass wir dadurch, dass wir alle mehr sozialen Abstand halten, mit gr&ouml;&szlig;ter Wahrscheinlichkeit viele Menschenleben retten k&ouml;nnen.</span></p><p class="c0"><span class="c3">&nbsp;</span></p><p class="c0"><span class="c3">Einschr&auml;nkungen f&uuml;r die G&uuml;ltigkeit der Zahlen: Die Zahlen sind allenfalls als grobe Tendenzen zu betrachten, um m&ouml;gliche Szenarien (mehr vs. weniger soziale Distanzierung) zu vergleichen und zu illustrieren. Nicht aber um eine genaue Aussage &uuml;ber die Fallzahlen zu treffen. Weiterhin ist der COVID-19 ein neuartiger Virus, der in vielerlei Hinsicht noch weiter erforscht werden muss. Einige </span></p><p class="c0 c2"><span class="c3"/></p><p class="c0 c2"><span class="c3"/></p><p class="c0"><span class="c6">Quellen (Echtdaten): </span><span class="c3">Ist das jetzt JHU bei uns?</span></p><p class="c0"><span class="c3">&nbsp;</span></p><p class="c0"><span class="c4">Es gelten insbesondere folgende Einschr&auml;nkungen&hellip;</span></p><p class="c0"><span class="c3">&hellip; f&uuml;r den Slider:</span></p><ul class="c1 lst-kix_ieqpel6bzw3y-0 start"><li class="c0 c5"><span class="c3">&hellip; W&auml;hrend die Mechanismen der Ma&szlig;nahmen im Modell abgebildet werden und die Tendenzen einer Ma&szlig;nahme dargestellt werden k&ouml;nnen, ist es an vielerlei Stelle stark vereinfacht.(Hier m&uuml;ssen noch Einschr&auml;nkungen hin: Inwiefern kann man das insbesondere mit der Zahl die dahinter steht in Zusammenhang bringen: Bitte beitragen, wer kann)</span></li><li class="c0 c5"><span class="c3">....</span></li></ul><p class="c0 c2"><span class="c4"/></p><p class="c0"><span class="c3">... f&uuml;r die Zahl der Infizierten:</span></p><ul class="c1 lst-kix_gbnoscpa7gke-0 start"><li class="c0 c5"><span class="c3">&hellip; (Hier m&uuml;ssen noch Einschr&auml;nkungen hin: Bitte beitragen, wer kann)</span></li><li class="c0 c5"><span class="c3">...</span></li></ul><p class="c0 c2"><span class="c3"/></p><p class="c0"><span class="c3">... f&uuml;r die Todeszahlen:</span></p><ul class="c1 lst-kix_z82iroflafl6-0 start"><li class="c0 c5"><span class="c3">...(Hier m&uuml;ssen noch Einschr&auml;nkungen hin: Bitte beitragen, wer kann)</span></li><li class="c0 c5"><span class="c3">...</span></li></ul><p class="c0"><span class="c3">&nbsp;</span></p><p class="c0"><span class="c3">... f&uuml;r die Zahl der Genesungen:</span></p><ul class="c1 lst-kix_d0fwy6a2m2x8-0 start"><li class="c0 c5"><span class="c3">&hellip;(Hier m&uuml;ssen noch Einschr&auml;nkungen hin: Bitte beitragen, wer kann)</span></li><li class="c0 c5"><span class="c3">...</span></li></ul><p class="c0"><span class="c3">&nbsp;</span></p><p class="c0 c2"><span class="c3"/></p><p class="c0"><span class="c4">Wir glauben, dass folgende Eigenschaften f&uuml;r die grunds&auml;tzliche G&uuml;ltigkeit des Modells sprechen...</span></p><p class="c0"><span class="c4">&nbsp;</span></p><ul class="c1 lst-kix_uw0z3qej601l-0 start"><li class="c0 c5"><span class="c3">Die hier gezeigten Vorhersagemodelle basieren auf dem sogenannten SEIR-Modell, welches derzeit auch vom RKI genutzt wird.</span></li><li class="c0 c5"><span class="c3">Es nimmt die Zahlen der f&uuml;r den Virus empf&auml;nglichen (Susceptible S), z.B. die Bev&ouml;lkerungszahl eines Landes, als Input, sowie die Zahl der am ersten Tag Infizierten (Infected I) und dem Virus ausgesetzten (Exposed E) und berechnet neben diesen drei Gr&ouml;&szlig;en auch die Zahl der Genesenen (Recovered R)</span></li><li class="c0 c5"><span class="c3">Das SEIR-Modell nutzt weitere Input Parameter, die durchschnittliche Dauer in der ein dem Virus ausgesetzter Person infiziert wird sowie die durchschnittliche Dauer die eine infizierte Person krank ist, bis sie wieder gesundet (oder stirbt). Auf diese Parameter haben wir leider wenig Einfluss.</span></li><li class="c0 c5"><span class="c3">Der wichtigste Parameter in allen epidemiologischen Modellen ist aber die Reproduktionsrate R_0, welche angibt, wie viele Personen eine infizierte Person im Schnitt selber infiziert. Diese Rate muss unter den Schwellwert eins gebracht werden, damit die Ausbreitung sich verlangsamt, also die Kurve abgeflacht wird.</span></li><li class="c0 c5"><span class="c3 c10">F&uuml;r verschiedene Szenarien (Schlie&szlig;ung von Schulen, Schlie&szlig;ung von Bars) wurde von der ML Gruppe das R_0 gesch&auml;tzt und es flie&szlig;t in unser Modell zur Vorhersage ein.</span></li><li class="c0 c5"><span class="c3">Das Modell l&auml;sst sich beliebig f&uuml;r weitere Szenarien erweitern, wie zum Beispiel eine Dunkelziffer oder eine Mortalit&auml;t, als auch wenn Verf&uuml;gbar eine Impfung.</span></li><li class="c0 c5"><span class="c3">Wissenschaftliche Ver&ouml;ffentlichungen hierzu unter folgende DOI-Nummern</span></li></ul><p class="c0 c2"><span class="c3"/></p><p class="c0 c2"><span class="c3"/></p>
+
+    <h1 class="m-8">Interpretationshilfe für die App „WhatCanIdo“</h1>
+    <p class="my-2">
+      Ziel: Diese App verfolgt das Ziel, Menschen in Deutschland dafür zu sensibilisieren, dass soziale Distanzierung im Rahmen der COVID-19-Krise sinnvoll ist.
+    </p>
+    <p class="my-2">
+      Aussage: Die grundlegende Aussage, die sich aus der App ableiten lässt ist, dass wir dadurch, dass wir alle mehr physischen Abstand halten, mit größter Wahrscheinlichkeit viele Menschenleben retten können.
+    </p>
+    <p class="my-2">
+      Einschränkungen für die Gültigkeit der Zahlen: Die Zahlen sind allenfalls als grobe Tendenzen zu betrachten, um mögliche Szenarien (mehr vs. weniger soziale Distanzierung) zu vergleichen und zu illustrieren. Ziel der App sind qualitative Aussagen, keine quantitativen. Somit sollen keine genauen Aussagen über die Fallzahlen getroffen werden. Weiterhin ist der COVID-19 ein neuartiger Virus, der in vielerlei Hinsicht noch weiter erforscht werden muss.
+
+    </p>
+    <p class="my-2">
+      Es gelten insbesondere folgende Einschränkungen…
+      … für den Slider:
+      … Während die Mechanismen der Maßnahmen im Modell abgebildet werden und die Tendenzen einer Maßnahme dargestellt werden können, ist es an vielerlei Stelle stark vereinfacht. Die genauen Auswirkungen einzelner Szenarien (Schließung von Clubs, Restaurants, Vermeidung von Händeschütteln) sind nicht bekannt und wurden zur Modellierung stark vereinfacht. Zwar ist beispielsweise bekannt, dass sich Viren auf Großveranstaltungen stark verbreiten können, aber wie viele Personen sich genau infizieren können ist von Veranstaltung zu Veranstaltung unterschiedlich.
+    </p>
+    <p class="my-2">
+      ... für die Zahl der Infizierten:
+      … Die Zahl der Infizierten ist keinesfalls als genau zu erwartende Zahl an Infektionen zu verstehen. Vielmehr soll deutlich werden wie sich einzelne Maßnahmen auf die Anzahl der Infizierten auswirkt.
+    </p>
+    <p class="my-2">
+      ... für die Todeszahlen:
+      … Die Zahl der Tode ist keinesfalls als genau zu erwartende Zahl an Toten zu verstehen. Vielmehr soll deutlich werden wie sich einzelne Maßnahmen auf die Anzahl der Toten auswirkt. Es ist wichtig, dass sich jeder einzelne an Maßnahmen zur Reduzierung der Ausbreitung hält. Zu Zeiten einer Epidemie retten räumliche Distanzierungsmaßnahmen Leben.
+    </p>
+    <p class="my-2">
+      ..
+      … für den Zeitpunkt, ab dem die Maßnahmen Wirkung zeigen:
+      … Es ist bereits jetzt eine hohe Dunkelziffer an Personen infiziert, die aber noch in keiner Statistik auftauchen ...
+      … Dadurch wird es auch nach dem Inkrafttreten von Maßnahmen wie einer Ausgangssperre weiter zu einer Zunahme an bestätigten Fällen und Todesfällen kommen. Es ist durchaus möglich, dass sich die scheinbare Zunahme für einige Tage sogar noch weiter beschleunigt, bevor sie abflacht …
+      … Das bedeutet aber nicht, dass die Maßnahmen wirkungslos sind! Ein wesentlicher Teil der neu gemeldeten Fälle wird sich bereits vor diesen Maßnahmen angesteckt haben ...
+      … Die Gründe für die hohe Dunkelziffer sind vielfältig: Zeitverzögerung durch Auswertungsdauer der Tests, Kapazitätsgrenzen der testenden Behörden (es werden bereits jetzt teilweise nur noch Personen getestet, die Symptome zeigen UND Kontakt zu einem bestätigten Fall hatten), “stille” Ansteckung durch Personen, die selbst keinerlei Symptome zeigen etc ...
+    </p>
+    <p class="my-2">
+      Erläuterung zu dem verwendeten Modell:
+      “In einem häufig verwendeten Modellierungskonzept, den so genannten SEIR-Modellen, wird die Bevölkerung in verschiedene Gruppen unterteilt, und die Dynamik der Infektionen und Erkrankungen wird über eine Modellierung der Übergänge zwischen diesen Gruppen nachgebildet. Die Buchstaben SEIR stehen für die empfänglichen (susceptible), latent infizierten (exposed – infiziert, aber noch nicht infektiös), symptomatisch infektiösen (infectious) und schließlich verstorbenen oder genesenen (recovered) Anteile der Bevölkerung. In diesen Modellen ist von besonderer Bedeutung, wie viele Personen eine infektiöse Person selbst im Mittel in einer vollständig suszeptiblen Bevölkerung ansteckt (so genannte Basisreproduktionszahl; R0). Die Basisreproduktionszahl ist ein Produkt aus der durchschnittlichen Zahl der Kontakte einer infektiösen Person pro Tag, der Übertragungswahrscheinlichkeit bei Kontakt und der durchschnittlichen Dauer der Infektiosität in Tagen. Daraus wird unmittelbar ersichtlich, dass verschiedene Maßnahmen auf diese Faktoren einwirken. Zum Beispiel reduzieren Hustenregeln (in die Ellenbeuge niesen und husten) und Händehygiene die Übertragungswahrscheinlichkeit. Die Isolation Erkrankter reduziert die Zahl der Kontakte mit suszeptiblen Personen. Und Quarantäne von so genannten ansteckungsverdächtigen Personen (die im Verdacht stehen, schon angesteckt zu sein, aber noch nicht infektiös/krank sind), hat zum einen den Sinn, dass ein daraus entstehender Fall quasi schon isoliert ist (oder die Form der Absonderung bei Erkrankung von z.B. häusliche Isolation in Krankenhausisolation umgeändert werden kann), und dass die Anzahl der weiteren Kontaktpersonen schon vor dem Beginn der Infektiosität (die u.U. schon VOR Erkrankungsbeginn gegeben ist) reduziert ist. Letztlich zielen die Gegenmaßnahmen darauf ab, die Zahl der Folgeinfektionen zu verringern und damit den Verlauf der Epidemie zumindest zu verlangsamen und die Größe des Ausbruchs zu verringern. Die Verhältnismäßigkeit der Maßnahmen ist auch immer eine Abwägung zwischen sehr vielen unterschiedlichen Interessen.” aus https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Modellierung_Deutschland.pdf?__blob=publicationFile
+    </p>
+    <p class="my-2">
+      Quellen (Echtdaten): MUSS NOCH ANGEBEN WERDEN
+      . für die Zahl der Genesungen:
+      …(Hier müssen noch Einschränkungen hin: Bitte beitragen, wer kann)
+      ...
+
+    </p>
+    <p class="my-2">
+      Grundsätzlich sprechen folgende Eigenschaften für die Gültigkeit des Modells
+    </p>
+    <p class="my-2">
+      Das hier gezeigte Vorhersagemodell basiert auf dem sogenannten SEIR-Modell. Welches weit verbreitet Anwendung findet. Es wird auch vom RKI genutzt.
+    </p>
+    <p class="my-2">
+      Nähere Informationen zum Modell finden Sie hier:
+      Es nimmt die Zahlen der für den Virus empfänglichen (Susceptible S), z.B. die Bevölkerungszahl eines Landes, als Input, sowie die Zahl der am ersten Tag Infizierten (Infected I) und dem Virus ausgesetzten (Exposed E) und berechnet neben diesen drei Größen auch die Zahl der Genesenen (Recovered R)
+      Das SEIR-Modell nutzt weitere Input Parameter, die durchschnittliche Dauer, in der eine dem Virus ausgesetzte Person infiziert wird, sowie die durchschnittliche Dauer, die eine infizierte Person krank ist, bis sie wieder gesundet (oder stirbt). Auf diese Parameter haben wir leider wenig Einfluss.
+      Der wichtigste Parameter in allen epidemiologischen Modellen ist aber die Reproduktionsrate R_0, welche angibt, wie viele Personen eine infizierte Person im Schnitt selber infiziert. Diese Rate muss unter den Schwellwert eins gebracht werden, damit die Ausbreitung sich verlangsamt, also die Kurve abgeflacht wird.
+      Szenarien (Schließung von Clubs, Restaurants, Vermeidung von Händeschütteln) sind nicht wurde von der ML Gruppe das R_0 geschätzt und es fließt in unser Modell zur Vorhersage ein.
+
+    </p>
+    <p class="my-2">
+      Das Modell lässt sich beliebig für weitere Szenarien erweitern, wie zum Beispiel eine Dunkelziffer oder eine Mortalität, als auch wenn Verfügbar eine Impfung.
+      Wissenschaftliche Veröffentlichungen hierzu unter folgende DOI-Nummern
+    </p>
+
   </div>
 </template>
 
