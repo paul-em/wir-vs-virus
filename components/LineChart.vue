@@ -17,7 +17,7 @@
 
 <script>
 import 'chart.js';
-import { debounce } from 'underscore';
+import { throttle } from 'underscore';
 
 export default {
   props: {
@@ -39,7 +39,7 @@ export default {
   },
   mounted() {
     this.render();
-    this.debounceUpdate = debounce(this.update, 200);
+    this.debounceUpdate = throttle(this.update, 200);
   },
   methods: {
     toggleViewType() {
