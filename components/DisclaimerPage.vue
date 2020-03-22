@@ -28,8 +28,8 @@
         align="center"
         style="text-align:center"><a><b><span
           lang="de"
-          style="font-size:14.0pt;line-height:115%">Interpretationshilfe für die App
-          „WhatCanIdo“</span></b></a><span lang="de"><a
+          style="font-size:17.0pt;line-height:115%">Interpretationshilfe für die App
+          &quot;WhatCanIdo&quot;</span></b></a><span lang="de"><a
             id="_anchor_1"
             class="msocomanchor"
             onmouseover="msoCommentShow('_anchor_1','_com_1')"
@@ -37,17 +37,18 @@
             href="#_msocom_1"
             language="JavaScript"
             name="_msoanchor_1">[1]</a>&nbsp;</span></p>
-
+      <p
+        class="MsoNormal"
+        style="text-align:justify"><span lang="de"/>&nbsp;</p>
       <p
         class="MsoNormal"
         style="text-align:justify"><b><span lang="de">Ziel: </span></b><span
           lang="de">Diese App verfolgt das Ziel, Menschen in Deutschland dafür zu
           sensibilisieren, dass soziale Distanzierung im Rahmen der COVID-19-Krise
           sinnvoll ist.</span></p>
-
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de"/></p>
+        style="text-align:justify"><span lang="de"/>&nbsp;</p>
 
       <p
         class="MsoNormal"
@@ -58,12 +59,12 @@
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de"/></p>
+        style="text-align:justify"><span lang="de"/>&nbsp;</p>
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">Einschränkungen für
-        die Gültigkeit der Zahlen: Die Zahlen sind allenfalls als grobe Tendenzen zu
+        style="text-align:justify"><b><span lang="de">Einschränkungen für
+        die Gültigkeit der Zahlen: </span></b><span lang="de"> Die Zahlen sind allenfalls als grobe Tendenzen zu
         betrachten, um mögliche Szenarien (mehr vs. weniger soziale Distanzierung) zu
         vergleichen und zu illustrieren. Ziel der App sind qualitative Aussagen, keine
         quantitativen. Somit sollen keine genauen Aussagen über die Fallzahlen
@@ -89,17 +90,16 @@
       <p
         class="MsoNormal"
         style="text-align:justify"><b><span lang="de">Es gelten
-        insbesondere folgende Einschränkungen…</span></b></p>
-
+        insbesondere folgende Einschränkungen:</span></b></p>
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">… für den Slider:</span></p>
+        style="text-align:justify"><b><span lang="de">&nbsp;</span></b></p>
 
       <p
         class="MsoNormal"
         style="margin-left:36.0pt;text-align:justify;text-indent:
--18.0pt"><span lang="de">●<span style="font:7.0pt &quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span></span><span lang="de">… Während die Mechanismen der Maßnahmen im Modell
+-18.0pt"><span lang="de"><b>Für den Slider:</b><span style="font:7.0pt &quot;">&nbsp;
+        </span></span><span lang="de">Während die Mechanismen der Maßnahmen im Modell
         abgebildet werden und die Tendenzen einer Maßnahme dargestellt werden können,
         ist es an vielerlei Stelle stark vereinfacht. Die genauen Auswirkungen
         einzelner Szenarien (Schließung von Clubs, Restaurants, Vermeidung von
@@ -114,14 +114,9 @@
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">... für die Zahl
-        der Infizierten:</span></p>
-
-      <p
-        class="MsoNormal"
         style="margin-left:36.0pt;text-align:justify;text-indent:
--18.0pt"><span lang="de">●<span style="font:7.0pt &quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span></span><span lang="de">… Die Zahl der Infizierten ist keinesfalls als
+-18.0pt"><span lang="de"><b>Für die Zahl:</b><span style="font:7.0pt &quot;">&nbsp;
+        </span></span><span lang="de">Die Zahl der Infizierten ist keinesfalls als
         genau zu erwartende Zahl an Infektionen zu verstehen. Vielmehr soll deutlich
         werden wie sich einzelne Maßnahmen auf die Anzahl der Infizierten auswirkt. </span></p>
 
@@ -131,14 +126,9 @@
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">... für die
-        Todeszahlen:</span></p>
-
-      <p
-        class="MsoNormal"
         style="margin-left:36.0pt;text-align:justify;text-indent:
--18.0pt"><span lang="de">●<span style="font:7.0pt &quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span></span><span lang="de">… Die Zahl der Tode ist keinesfalls als genau zu
+-18.0pt"><span lang="de"><b>Für die Todeszahlen:</b><span style="font:7.0pt &quot;">&nbsp;
+        </span></span><span lang="de">Die Zahl der Tode ist keinesfalls als genau zu
         erwartende Zahl an Toten zu verstehen. Vielmehr soll deutlich werden wie sich
         einzelne Maßnahmen auf die Anzahl der Toten auswirkt. Es ist wichtig, dass sich
         jeder einzelne an Maßnahmen zur Reduzierung der Ausbreitung hält. Zu Zeiten
@@ -146,54 +136,20 @@
 
       <p
         class="MsoNormal"
-        style="margin-left:36.0pt;text-align:justify;text-indent:
--18.0pt"><span lang="de">●<span style="font:7.0pt &quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </span></span><span lang="de"/></p>
-
-      <p
-        class="MsoNormal"
         style="text-align:justify"><span lang="de">&nbsp;</span></p>
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">… für den
-        Zeitpunkt, ab dem die Maßnahmen Wirkung zeigen:</span></p>
-
-      <p
-        class="MsoNormal"
         style="margin-left:36.0pt;text-align:justify;text-indent:
--18.0pt"><span lang="de">●<span style="font:7.0pt &quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span></span><span lang="de">… Es ist bereits jetzt eine hohe Dunkelziffer an
-        Personen infiziert, die aber noch in keiner Statistik auftauchen ...</span></p>
-
-      <p
-        class="MsoNormal"
-        style="margin-left:36.0pt;text-align:justify;text-indent:
--18.0pt"><span lang="de">●<span style="font:7.0pt &quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span></span><span lang="de">… Dadurch <b>wird es auch nach dem Inkrafttreten
-        von Maßnahmen wie einer Ausgangssperre weiter zu einer Zunahme an bestätigten
-        Fällen und Todesfällen kommen.</b> Es ist durchaus möglich, dass sich die
+-18.0pt"><span lang="de"><b>Zeitpunkt, ab dem die Maßnahmen Wirkung zeigen:</b><span style="font:7.0pt &quot;">&nbsp;
+        </span></span><span lang="de">Es ist bereits jetzt eine hohe Dunkelziffer an
+        Personen infiziert, die aber noch in keiner Statistik auftauchen. Dadurch wird es auch nach dem Inkrafttreten von Maßnahmen wie einer Ausgangssperre weiter zu einer Zunahme an bestätigten Fällen und Todesfällen kommen. Es ist durchaus möglich, dass sich die
         scheinbare Zunahme für einige Tage sogar noch weiter beschleunigt, bevor sie
-        abflacht …</span></p>
-
-      <p
-        class="MsoNormal"
-        style="margin-left:36.0pt;text-align:justify;text-indent:
--18.0pt"><span lang="de">●<span style="font:7.0pt &quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span></span><span lang="de">… <b>Das bedeutet aber nicht, dass die Maßnahmen
-        wirkungslos sind!</b> Ein wesentlicher Teil der neu gemeldeten Fälle wird sich
-        bereits vor diesen Maßnahmen angesteckt haben ...</span></p>
-
-      <p
-        class="MsoNormal"
-        style="margin-left:36.0pt;text-align:justify;text-indent:
--18.0pt"><span lang="de">●<span style="font:7.0pt &quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span></span><span lang="de">… Die Gründe für die hohe Dunkelziffer sind
+        abflacht. Das bedeutet aber nicht, dass die Maßnahmen wirkungslos sind! Ein wesentlicher Teil der neu gemeldeten Fälle wird sich bereits vor diesen Maßnahmen angesteckt haben. Die Gründe für die hohe Dunkelziffer sind
         vielfältig: Zeitverzögerung durch Auswertungsdauer der Tests, Kapazitätsgrenzen
         der testenden Behörden (es werden bereits jetzt teilweise nur noch Personen
         getestet, die Symptome zeigen UND Kontakt zu einem bestätigten Fall hatten),
-        “stille” Ansteckung durch Personen, die selbst keinerlei Symptome zeigen etc
-        ...</span></p>
+        “stille” Ansteckung durch Personen, die selbst keinerlei Symptome zeigen etc.</span></p>
 
       <p
         class="MsoNormal"
@@ -203,10 +159,16 @@
         class="MsoNormal"
         style="text-align:justify"><span lang="de">&nbsp;</span></p>
 
-      <h2
-        align="center"
-        style="text-align:center"><a name="_hx7s4cs9cgaf"/><span
-          lang="de">Erläuterung zu dem verwendeten Modell:</span></h2>
+      <p
+        class="MsoNormal"
+        style="text-align:center"><b><span
+          lang="de"
+          style="font-size:17.0pt;line-height:115%"><br>
+          <br>
+          Erläuterung zu dem verwendeten Modell</span></b></p>
+      <p
+        class="MsoNormal"
+        style="text-align:justify"><span lang="de">&nbsp;</span></p>
 
       <p
         class="MsoNormal"
@@ -248,33 +210,22 @@
 
       <p
         class="MsoNormal"
-        style="text-align:justify"><span lang="de">Erläuterung zu den
-        verwendeten Parametern</span></p>
-
+        style="text-align:center"><b><span
+          lang="de"
+          style="font-size:17.0pt;line-height:115%"><br>
+          <br>
+          Erläuterung zu den verwendeten Parametern</span></b></p>
+      <p
+        class="MsoNormal"
+        style="text-align:justify"><span lang="de">&nbsp;</span></p>
       <p
         class="MsoNormal"
         style="text-align:justify"><span
-          lang="de"
-          style="font-size:
-10.5pt;line-height:115%;font-family:Roboto;color:#3C4043;background:white">Ein
+          lang="de">Ein
           machine-learning Modell wurde verwendet, um Eingabeparameter für das
           SEIR-Simulationsmodell zu schätzen. Diese Schätzung liefert die Korrelation
           zwischen Maßnahmen und Funktionsparametern, hat jedoch eine statistische
-          Gültigkeit.</span></p>
-
-      <p
-        class="MsoNormal"
-        style="text-align:justify"><span
-          lang="de"
-          style="font-size:
-10.5pt;line-height:115%;font-family:Roboto;color:#3C4043;background:white">Um
-          die Gültigkeit eines ML-Modells zu quantifizieren, gibt es Performanceparameter
-          wie Precision und Recall.</span><span lang="de"/><span
-            lang="de"
-            style="font-size:10.5pt;line-height:115%;font-family:Roboto;color:#3C4043;
-background:white">Recall ist in diesem Fall wichtig, weil die Anzahl von false
-            negatives begrenzt werden sollen: Die Situation, in der das Modell ein
-            Individuum nicht als krank erkennt, während es in Wirklichkeit erkrankt.</span></p>
+          Gültigkeit. Um die Gültigkeit eines ML-Modells zu quantifizieren, gibt es Performanceparameter wie Precision und Recall. Recall ist in diesem Fall wichtig, weil die Anzahl von false negatives begrenzt werden sollen: Die Situation, in der das Modell ein Individuum nicht als krank erkennt, während es in Wirklichkeit erkrankt.</span></p>
 
       <p
         class="MsoNormal"
@@ -299,10 +250,14 @@ background:white">Recall ist in diesem Fall wichtig, weil die Anzahl von false
         class="MsoNormal"
         style="text-align:justify"><span lang="de">&nbsp;</span></p>
 
-      <h2 style="text-align:justify"><a name="_f48e4ff9a9gg"/><b><span lang="de">Disclaimer:
-      The aim of the app is not to make precise predictions about the epidemic of
-      COVID-19. Rather, it is intended to visualize the qualitative trends of
-      measures that each individual can take.</span></b></h2>
+      <p
+        class="MsoNormal"
+        style="text-align:justify"><b><span
+          lang="de"
+          style="font-size:14.0pt;line-height:115%"><br>
+          <br>
+          *Disclaimer: The aim of the app is not to make precise predictions about the epidemic of
+          COVID-19. Rather, it is intended to visualize the qualitative trends of measures that each individual can take.</span></b></p>
 
       <p
         class="MsoNormal"
@@ -315,8 +270,19 @@ background:white">Recall ist in diesem Fall wichtig, weil die Anzahl von false
         class="MsoNormal"
         style="text-align:justify"><span lang="de">&nbsp;</span></p>
 
-      <h2 style="text-align:justify"><a name="_1prpb4gq57db"/><span lang="de">Interpretation
-      aid for the &quot;WhatCanIdo&quot; app</span></h2>
+      <p
+        class="MsoNormal"
+        align="center"
+        style="text-align:center"><a><b><span
+          lang="de"
+          style="font-size:17.0pt;line-height:115%">Interpretation aid for the &quot;WhatCanIdo&quot; app</span></b></a><span lang="de"><a
+            id="_anchor_1"
+            class="msocomanchor"
+            onmouseover="msoCommentShow('_anchor_1','_com_1')"
+            onmouseout="msoCommentHide('_com_1')"
+            href="#_msocom_1"
+            language="JavaScript"
+            name="_msoanchor_1">[1]</a>&nbsp;</span></p>
 
       <p
         class="MsoNormal"
@@ -462,124 +428,6 @@ background:white">Recall ist in diesem Fall wichtig, weil die Anzahl von false
         model is an extended SEIR model. A short introduction to SEIR models can be
         found here: <a href="http://www.public.asu.edu/~hnesse/classes/seir.html"><span
           style="color:#1155CC">http://www.public.asu.edu/~hnesse/classes/seir.html</span></a></span></p>
-
-    </div>
-
-    <div>
-      <div>
-
-        <div
-          id="_com_2"
-          class="msocomtxt"
-          language="JavaScript"
-          onmouseover="msoCommentShow('_anchor_2','_com_2')"
-          onmouseout="msoCommentHide('_com_2')"><a name="_msocom_2"/>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">Grundsätzlich sprechen folgende Eigenschaften für die
-              Gültigkeit des Modells </span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black"/></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">Das hier gezeigte Vorhersagemodell basiert auf dem
-              sogenannten SEIR-Modell. Welches weit verbreitet Anwendung findet. Es wird auch
-              vom RKI genutzt.</span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">&nbsp;</span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">&nbsp;</span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">Nähere Informationen zum Modell finden Sie hier: </span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">Es nimmt die Zahlen der für den Virus empfänglichen
-              (Susceptible S), z.B. die Bevölkerungszahl eines Landes, als Input, sowie die
-              Zahl der am ersten Tag Infizierten (Infected I) und dem Virus ausgesetzten
-              (Exposed E) und berechnet neben diesen drei Größen auch die Zahl der Genesenen
-              (Recovered R)</span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">Das SEIR-Modell nutzt weitere Input Parameter, die
-              durchschnittliche Dauer, in der eine dem Virus ausgesetzte Person infiziert
-              wird, sowie die durchschnittliche Dauer, die eine infizierte Person krank ist,
-              bis sie wieder gesundet (oder stirbt). Auf diese Parameter haben wir leider
-              wenig Einfluss.</span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">Der wichtigste Parameter in allen epidemiologischen
-              Modellen ist aber die Reproduktionsrate R_0, welche angibt, wie viele Personen
-              eine infizierte Person im Schnitt selber infiziert. Diese Rate muss unter den
-              Schwellwert eins gebracht werden, damit die Ausbreitung sich verlangsamt, also
-              die Kurve abgeflacht wird.</span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">Szenarien (Schließung von Clubs, Restaurants, Vermeidung
-              von Händeschütteln) sind nicht wurde von der ML Gruppe das R_0 geschätzt und es
-              fließt in unser Modell zur Vorhersage ein.</span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">&nbsp;</span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">&nbsp;</span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">Das Modell lässt sich beliebig für weitere Szenarien
-              erweitern, wie zum Beispiel eine Dunkelziffer oder eine Mortalität, als auch
-              wenn Verfügbar eine Impfung.</span></p>
-
-          <p
-            class="MsoNormal"
-            style="line-height:normal;border:none"><span
-              lang="de"
-              style="color:black">Wissenschaftliche Veröffentlichungen hierzu unter folgende
-              DOI-Nummern</span></p>
-        </div>
-      </div>
     </div>
   </div>
 </template>
