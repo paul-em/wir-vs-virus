@@ -13,7 +13,9 @@
           :min="0"
           :max="100"
           v-model="rValue"/>
-        {{ rValue }}
+      </div>
+      <div>
+        Deaths: {{ formatNumber(deaths) }}
       </div>
       <line-chart
         v-if="selectedArea"
@@ -60,7 +62,7 @@ export default {
   },
   data: () => ({
     data: [],
-    selectedArea: 'China',
+    selectedArea: 'Germany',
     rValue: 50,
   }),
   computed: {
@@ -129,6 +131,19 @@ export default {
       }
       return dates;
     },
+    daySinceOutbreak() {
+      return this.areaData.infected.filter(item => !!item).length;
+    },
+    prediction() {
+      return this.$predict({
+        rValue: this.rValue,
+        population: this.population,
+        day: this.daySinceOutbreak,
+      });
+    },
+    deaths() {
+      return this.prediction.timelines[this.prediction.timelines.length - 1].deaths;
+    },
     datasets() {
       return [
         {
@@ -139,11 +154,10 @@ export default {
         },
         {
           label: 'Infected Prediction',
-          data: this.$predict.infections(this.areaData.infected, {
-            maxDays: 300,
-            rValue: this.rValue,
-            population: this.population,
-          }),
+          data: this.align(
+            this.areaData.infected,
+            this.prediction.timelines.map(item => item.infected),
+          ),
           backgroundColor: 'rgba(0, 0, 255, 0.01)',
           borderColor: 'rgba(0, 0, 255, 0.2)',
         },
@@ -155,11 +169,10 @@ export default {
         },
         {
           label: 'Deaths Prediction',
-          data: this.$predict.deaths(this.areaData.deaths, {
-            maxDays: 300,
-            rValue: this.rValue,
-            population: this.population,
-          }),
+          data: this.align(
+            this.areaData.deaths,
+            this.prediction.timelines.map(item => item.deaths),
+          ),
           backgroundColor: 'rgba(255, 0, 0, 0.01)',
           borderColor: 'rgba(255, 0, 0, 0.2)',
         },
@@ -171,11 +184,12 @@ export default {
         },
         {
           label: 'Recovered Prediction',
-          data: this.$predict.recovered(this.areaData.recovered, {
-            maxDays: 300,
-            rValue: this.rValue,
-            population: this.population,
-          }),
+          /*
+          data: this.align(
+            this.areaData.recovered,
+            this.prediction.timelines.map(item => item.recovered),
+          ),
+          */
           backgroundColor: 'rgba(0, 255, 0, 0.01)',
           borderColor: 'rgba(0, 255, 0, 0.2)',
         },
@@ -194,6 +208,22 @@ export default {
         lastValue += Math.round(lastValue * ((this.rValue - 50) / 1000));
       }
       return prediction;
+    },
+    align(actual, predicted) {
+      const index = actual.findIndex(item => item === null);
+      const lastValue = actual[index - 1];
+      const used = predicted.filter(val => val > lastValue);
+      const offset = [];
+      for (let i = 0; i < index - 1; i += 1) {
+        offset.push(null);
+      }
+      return [
+        ...offset,
+        ...used,
+      ];
+    },
+    formatNumber(num) {
+      return Math.floor(num).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
     },
   },
 };
