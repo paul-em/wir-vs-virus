@@ -61,10 +61,17 @@ export default {
             position: 'bottom',
           },
           animation: {
-            duration: 0,
+            duration: 100,
           },
           maintainAspectRatio: false,
           scales: {
+            xAxes: [
+              {
+                ticks: {
+                  maxTicksLimit: 20,
+                },
+              },
+            ],
             yAxes: [
               {
                 type: 'linear',
@@ -73,6 +80,8 @@ export default {
                     return parseInt(value, 10).toLocaleString(navigator.language,
                       { useGrouping: true });
                   },
+                  stepSize: 10000,
+                  maxTicksLimit: 10,
                 },
               },
             ],
