@@ -6,25 +6,30 @@
       <github-corner url="https://github.com/paul-em/wir-vs-virus"/>
     </header>
     <div class="pt-8">
-      <div class="max-w-xs">
-        <v-select
-          v-model="selectedArea"
-          :options="areaOptions"/>
-      </div>
       <div class="py-4">
         <v-slider
           :min="0"
           :max="100"
-          v-model="rValue"/>
+          :steps="10"
+          :dot-size="20"
+          v-model="rValue"
+          lazy/>
         <measures-view :r-value="rValue"/>
       </div>
-      <div class="p-4 flex justify-center">
-        <kpi-card
-          :value="prediction.totalInfected"
-          label="Infected"/>
-        <kpi-card
-          :value="prediction.totalDeaths"
-          label="Deaths"/>
+      <div>
+        <div class="inline-block min-w-s p-4">
+          <v-select
+            v-model="selectedArea"
+            :options="areaOptions"/>
+        </div>
+        <div class="p-4 flex justify-center">
+          <kpi-card
+            :value="prediction.totalInfected"
+            label="Infected"/>
+          <kpi-card
+            :value="prediction.totalDeaths"
+            label="Deaths"/>
+        </div>
       </div>
     </div>
     <div>
