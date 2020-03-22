@@ -7,6 +7,11 @@
         height="400"
       />
     </div>
+    <button
+      class="p-3 my-2 text-sm hover:bg-grey-lighter rounded-sm uppercase"
+      @click="toggleViewType">
+      {{ linear ? 'linear' : 'logarithmic' }}
+    </button>
   </div>
 </template>
 
@@ -20,6 +25,7 @@ export default {
   },
   data: () => ({
     chart: null,
+    linear: true,
     offsets: {},
   }),
   watch: {
@@ -39,6 +45,11 @@ export default {
     this.update();
   },
   methods: {
+    toggleViewType() {
+      this.linear = !this.linear;
+      this.chart.options.scales.yAxes[0].type = this.linear ? 'linear' : 'logarithmic';
+      this.chart.update();
+    },
     update() {
       this.chart = new window.Chart(this.$refs.chart, {
         type: 'line',
