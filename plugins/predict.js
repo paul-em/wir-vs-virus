@@ -135,12 +135,16 @@ export default (app, inject) => {
   inject('predict', ({ population, rValue }) => {
     const solution = getSolution(population, 1 - (rValue / 100), 120);
     //    Dead   Hospital          Recovered        Infected   Exposed
+    const lastItem = solution.P[solution.P.length - 1];
+    const Iter = solution.Iters[solution.Iters.length - 1];
     return {
       ...solution,
-      timelines: solution.P.map(item => ({
-        deaths: Math.round(item[0]),
-        recovered: Math.round(item[2]),
-        infected: Math.round(item[3]),
+      totalInfected: Math.round(population * (1 - Iter[0] - Iter[1] - Iter[2]) + I0),
+      totalDeaths: Math.round(lastItem[0]),
+      timelines: solution.Iters.map(Iter => ({
+        deaths: Math.round(population * Iter[9]),
+        recovered: Math.round(population * (Iter[7] + Iter[8])),
+        infected: Math.round(Iter[3]),
       })),
     };
   });
