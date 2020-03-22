@@ -6,7 +6,7 @@
       :class="{
         'line-through': measure.value > rValue,
       }"
-      class="p-2">
+      class="p-2 flex-1">
       {{ measure.label }}
     </div>
   </section>
