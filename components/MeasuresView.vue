@@ -42,7 +42,7 @@ export default {
           value: 40,
         },
         {
-          label: 'Cloth Shopping',
+          label: 'Shopping',
           value: 50,
         },
         {
