@@ -144,7 +144,7 @@ export default (app, inject) => {
       timelines: solution.Iters.map(Iter => ({
         deaths: Math.round(population * Iter[9]),
         recovered: Math.round(population * (Iter[7] + Iter[8])),
-        infected: Math.round(Iter[3]),
+        infected: Math.round(population * Iter[2]),
       })),
     };
   });
