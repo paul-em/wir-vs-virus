@@ -79,7 +79,8 @@ function formatDate(str) {
 export default {
   async asyncData({ app: { $loader } }) {
     return {
-      data: await $loader.loadFromJHU(),
+      cases: await $loader.loadCases(),
+      measures: await $loader.loadMeasures(),
     };
   },
   components: {
@@ -89,7 +90,8 @@ export default {
     vSlider,
   },
   data: () => ({
-    data: [],
+    cases: [],
+    measures: [],
     selectedArea: 'Germany',
     rValue: 50,
     showAll: true,
@@ -101,7 +103,7 @@ export default {
     areaOptions() {
       const areas = [];
       const missingPopulations = [];
-      this.data.forEach((item) => {
+      this.cases.forEach((item) => {
         if (item.area) {
           item.area.forEach((area) => {
             if (!areas.includes(area)) {
@@ -121,8 +123,8 @@ export default {
       }
       return areas;
     },
-    areaData() {
-      const items = this.data
+    areaCases() {
+      const items = this.cases
         .filter(item => item.area && item.area.includes(this.selectedArea));
       const infected = [];
       const recovered = [];
@@ -153,6 +155,9 @@ export default {
         deaths,
       };
     },
+    areaMeasures() {
+      return this.measures;
+    },
     dates() {
       const dates = [];
       for (let day = 0; day < 300; day += 1) {
@@ -161,7 +166,7 @@ export default {
       return dates;
     },
     daySinceOutbreak() {
-      return this.areaData.infected.filter(item => !!item).length;
+      return this.areaCases.infected.filter(item => !!item).length;
     },
     prediction() {
       return this.$predict({
@@ -177,14 +182,14 @@ export default {
       return [
         {
           label: 'Infected',
-          data: this.areaData.infected,
+          data: this.areaCases.infected,
           backgroundColor: 'rgba(0, 0, 255, 0.2)',
           borderColor: 'rgba(0, 0, 255, 0.8)',
         },
         {
           label: 'Infected Prediction',
           data: this.align(
-            this.areaData.infected,
+            this.areaCases.infected,
             this.prediction.timelines.map(item => item.infected),
           ),
           backgroundColor: 'rgba(0, 0, 255, 0.1)',
@@ -192,14 +197,14 @@ export default {
         },
         {
           label: 'Deaths',
-          data: this.areaData.deaths,
+          data: this.areaCases.deaths,
           backgroundColor: 'rgba(255, 0, 0, 0.2)',
           borderColor: 'rgba(255, 0, 0, 0.8)',
         },
         {
           label: 'Deaths Prediction',
           data: this.align(
-            this.areaData.deaths,
+            this.areaCases.deaths,
             this.prediction.timelines.map(item => item.deaths),
           ),
           backgroundColor: 'rgba(255, 0, 0, 0.1)',
@@ -207,14 +212,14 @@ export default {
         },
         {
           label: 'Recovered',
-          data: this.areaData.recovered,
+          data: this.areaCases.recovered,
           backgroundColor: 'rgba(0, 255, 0, 0.2)',
           borderColor: 'rgba(0, 255, 0, 0.8)',
         },
         {
           label: 'Recovered Prediction',
           data: this.align(
-            this.areaData.recovered,
+            this.areaCases.recovered,
             this.prediction.timelines.map(item => item.recovered),
           ),
           backgroundColor: 'rgba(0, 255, 0, 0.1)',

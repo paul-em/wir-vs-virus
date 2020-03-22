@@ -1,12 +1,13 @@
 import csvParser from 'papaparse';
-import mockData from './mock';
 
 const dataSourceConfirmed = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv';
 const dataSourceDeaths = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv';
 const dataSourceRecovered = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv';
 const corsProxy = 'https://nameless-shadow-474c.cors-everywhere.workers.dev/?';
 
-const dataLake = 'https://bene.gridpiloten.de:4712/api/cases';
+const dataLake = 'https://bene.gridpiloten.de:4712/api';
+
+const loadCasesFromDataLake = false;
 
 function fill(num) {
   if (num < 10) {
@@ -23,15 +24,20 @@ function formatDate(str) {
 
 export default ({ $axios }, inject) => {
   inject('loader', {
-    async loadFromDataLake() {
+    async loadMeasures() {
       try {
-        const re = await $axios.get(dataLake);
+        const re = await $axios.get(`${dataLake}/measures`);
         return re.data;
       } catch (err) {
-        return mockData;
+        console.log('error loading measures', err);
+        return [];
       }
     },
-    async loadFromJHU() {
+    async loadCases() {
+      if (loadCasesFromDataLake) {
+        const re = await $axios.get(`${dataLake}/cases`);
+        return re.data;
+      }
       let confirmedRaw;
       let deathsRaw;
       let recoveredRaw;
