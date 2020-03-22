@@ -55,6 +55,9 @@ export default {
           datasets: this.datasets,
         },
         options: {
+          legend: {
+            position: 'bottom',
+          },
           animation: {
             duration: 0,
           },
