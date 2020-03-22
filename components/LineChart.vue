@@ -17,6 +17,7 @@
 
 <script>
 import 'chart.js';
+import { debounce } from 'underscore';
 
 export default {
   props: {
@@ -32,17 +33,13 @@ export default {
     datasets: {
       deep: true,
       handler() {
-        this.chart.data.labels = this.labels;
-        this.chart.data.datasets = this.datasets;
-        this.chart.update();
+        this.debounceUpdate();
       },
-    },
-    maxValue() {
-      this.update();
     },
   },
   mounted() {
-    this.update();
+    this.render();
+    this.debounceUpdate = debounce(this.update, 200);
   },
   methods: {
     toggleViewType() {
@@ -50,7 +47,7 @@ export default {
       this.chart.options.scales.yAxes[0].type = this.linear ? 'linear' : 'logarithmic';
       this.chart.update();
     },
-    update() {
+    render() {
       this.chart = new window.Chart(this.$refs.chart, {
         type: 'line',
         data: {
@@ -71,6 +68,11 @@ export default {
           },
         },
       });
+    },
+    update() {
+      this.chart.data.labels = this.labels;
+      this.chart.data.datasets = this.datasets;
+      this.chart.update();
     },
   },
 };
