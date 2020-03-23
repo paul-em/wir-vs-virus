@@ -215,10 +215,11 @@
         class="MsoNormal"
         style="text-align:justify"><span
           lang="de">Ein
-          machine-learning Modell wurde verwendet, um Eingabeparameter für das
-          SEIR-Simulationsmodell zu schätzen. Diese Schätzung liefert die Korrelation
-          zwischen Maßnahmen und Funktionsparametern, hat jedoch eine statistische
-          Gültigkeit. Um die Gültigkeit eines ML-Modells zu quantifizieren, gibt es Performanceparameter wie Precision und Recall. Recall ist in diesem Fall wichtig, weil die Anzahl von false negatives begrenzt werden sollen: Die Situation, in der das Modell ein Individuum nicht als krank erkennt, während es in Wirklichkeit erkrankt.</span></p>
+          Machine-Learning (ML) Modell wurde verwendet, um Eingabeparameter für das SEIR-Simulationsmodell zu schätzen.
+          Diese Schätzung liefert die Korrelation zwischen Maßnahmen und Funktionsparametern, hat jedoch keine statistische Gültigkeit.
+          Um die Gültigkeit eines ML-Modells zu quantifizieren, gibt es Performanceparameter wie Precision und Recall.
+          Recall ist in diesem Fall wichtig, weil die Anzahl von false negatives begrenzt werden sollen:
+          Die Situation, in der das Modell ein Individuum nicht als krank erkennt, während es in Wirklichkeit erkrankt.</span></p>
 
       <p
         class="MsoNormal"
