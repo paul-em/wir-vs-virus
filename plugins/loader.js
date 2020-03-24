@@ -84,13 +84,15 @@ export default ({ $axios }, inject) => {
             const currentDeaths = parseInt(deaths[day] || 0, 10);
             const currentRecovered = parseInt(recovered[day] || 0, 10);
             const notInfected = currentDeaths + currentRecovered;
-            items.push({
-              area: [item['Province/State'], item['Country/Region']].filter(v => !!v),
-              date: formatDate(day),
-              infected: parseInt(item[day] || 0, 10) - notInfected,
-              deaths: currentDeaths,
-              recovered: currentRecovered,
-            });
+            if (day !== '3/23/20') {
+              items.push({
+                area: [item['Province/State'], item['Country/Region']].filter(v => !!v),
+                date: formatDate(day),
+                infected: parseInt(item[day] || 0, 10) - notInfected,
+                deaths: currentDeaths,
+                recovered: currentRecovered,
+              });
+            }
           });
       });
       return items;
