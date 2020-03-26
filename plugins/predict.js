@@ -19,6 +19,7 @@ const D_incbation = 5.2;
 const D_infectious = 2.9;
 const D_recovery_mild = (14 - 2.9);
 const D_recovery_severe = (31.5 - 2.9);
+
 const D_hospital_lag = 5;
 const D_death = Time_to_death - D_infectious;
 const CFR = 0.02;
