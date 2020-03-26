@@ -66,12 +66,6 @@
           :datasets="[datasets['deaths'], datasets['deaths_prediction']]"
           :labels="dates"
           :max-value="population"/>
-        Recovered
-        <line-chart
-          v-if="selectedArea"
-          :datasets="[datasets['recovered'], datasets['recovered_prediction']]"
-          :labels="dates"
-          :max-value="population"/>
       </div>
       <button
         class="p-3 my-2 text-sm hover:bg-grey-lighter rounded-sm uppercase"
@@ -267,21 +261,6 @@ export default {
           backgroundColor: 'rgba(255, 0, 0, 0.1)',
           borderColor: 'rgba(255, 0, 0, 0.2)',
         },
-        recovered: {
-          label: this.$t('label.recovered'),
-          data: this.areaCases.recovered,
-          backgroundColor: 'rgba(0, 255, 0, 0.2)',
-          borderColor: 'rgba(0, 255, 0, 0.8)',
-        },
-        recovered_prediction: {
-          label: this.$t('label.recovered-prediction'),
-          data: this.align(
-            this.areaCases.recovered,
-            this.prediction.timelines.map(item => item.recovered),
-          ),
-          backgroundColor: 'rgba(0, 255, 0, 0.1)',
-          borderColor: 'rgba(0, 255, 0, 0.2)',
-        },
       };
     },
   },
@@ -302,6 +281,7 @@ export default {
       const index = actual.findIndex(item => item === null);
       const lastValue = actual[index - 2];
       const cutoffPoint = predicted.findIndex(val => val > lastValue);
+      console.log('cutoffpoint');
       const used = predicted.slice(cutoffPoint);
       const offset = [];
       for (let i = 0; i < index - 1; i += 1) {

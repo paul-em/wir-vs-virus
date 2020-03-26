@@ -73,7 +73,7 @@ export default ({ $axios }, inject) => {
           ].includes(i))
           .forEach((day) => {
             const currentDeaths = parseInt(deaths[day] || 0, 10);
-            const notInfected = currentDeaths; // TODO: add calcuation
+            const notInfected = currentDeaths;
             items.push({
               area: [item['Province/State'], item['Country/Region']].filter(v => !!v),
               date: formatDate(day),
