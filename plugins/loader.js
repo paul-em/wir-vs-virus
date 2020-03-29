@@ -35,7 +35,12 @@ export default ({ $axios }, inject) => {
     async loadCases() {
       if (loadCasesFromDataLake) {
         const re = await $axios.get(`${dataLake}/cases`);
-        return re.data;
+        return re.data.map(item => ({
+          area: item.adm,
+          date: formatDate(item.date),
+          infected: item.infected,
+          deaths: item.dead,
+        }));
       }
       let confirmedRaw;
       let deathsRaw;
