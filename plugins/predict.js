@@ -35,7 +35,6 @@ export default (app, inject) => {
         maxInfected = item.infected;
       }
     });
-    console.log(timelines);
     return {
       totalInfected: initiallyInfected + lastItem.totalInfected,
       totalDeaths: initiallyDeaths + lastItem.deaths,
