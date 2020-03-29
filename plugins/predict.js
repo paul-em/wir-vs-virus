@@ -14,12 +14,18 @@ const covid19 = new SeirModel({
 });
 
 export default (app, inject) => {
-  inject('predict', ({ population, rValue }) => {
+  inject('predict', ({
+    population,
+    rValue,
+    initiallyInfected,
+    initiallyDeaths,
+  }) => {
     const timelines = covid19.calculate({
       population,
-      initiallyInfected: 1,
+      initiallyInfected,
+      initiallyExposed: initiallyInfected * 2,
       r0ReductionPercent: 100 - rValue,
-      r0ReductionDay: 96,
+      r0ReductionDay: 0,
       days: 300,
     });
     const lastItem = timelines[timelines.length - 1];
@@ -31,8 +37,8 @@ export default (app, inject) => {
     });
     console.log(timelines);
     return {
-      totalInfected: lastItem.totalInfected,
-      totalDeaths: lastItem.deaths,
+      totalInfected: initiallyInfected + lastItem.totalInfected,
+      totalDeaths: initiallyDeaths + lastItem.deaths,
       maxInfected,
       timelines,
     };

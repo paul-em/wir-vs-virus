@@ -212,11 +212,31 @@ export default {
     daySinceOutbreak() {
       return this.areaCases.infected.filter(item => !!item).length;
     },
+    currentlyInfected() {
+      let latestInfected = 0;
+      this.areaCases.infected.forEach((infected) => {
+        if (infected !== null) {
+          latestInfected = infected;
+        }
+      });
+      return latestInfected;
+    },
+    currentlyDeaths() {
+      let latestDeaths = 0;
+      this.areaCases.deaths.forEach((deaths) => {
+        if (deaths !== null) {
+          latestDeaths = deaths;
+        }
+      });
+      return latestDeaths;
+    },
     prediction() {
       return this.$predict({
         rValue: this.rValue,
         population: this.population,
         day: this.daySinceOutbreak,
+        initiallyInfected: this.currentlyInfected,
+        initiallyDeaths: this.currentlyDeaths,
       });
     },
     worstCasePrediction() {
@@ -224,6 +244,8 @@ export default {
         rValue: 100,
         population: this.population,
         day: this.daySinceOutbreak,
+        initiallyInfected: this.currentlyInfected,
+        initiallyDeaths: this.currentlyDeaths,
       });
     },
     deaths() {
@@ -279,17 +301,13 @@ export default {
     },
     align(actual, predicted) {
       const index = actual.findIndex(item => item === null);
-      const lastValue = actual[index - 1];
-      const cutoffPoint = predicted.findIndex(val => val > lastValue);
-      const used = predicted.slice(cutoffPoint);
       const offset = [];
       for (let i = 0; i < index - 1; i += 1) {
         offset.push(null);
       }
       return [
         ...offset,
-        lastValue,
-        ...used,
+        ...predicted,
       ];
     },
   },
