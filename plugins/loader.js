@@ -2,6 +2,7 @@ import csvParser from 'papaparse';
 
 const dataSourceConfirmed = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv';
 const dataSourceDeaths = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv';
+const dataSourceRecovered = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv';
 const corsProxy = 'https://nameless-shadow-474c.cors-everywhere.workers.dev/?';
 
 const dataLake = 'https://bene.gridpiloten.de:4712/api';
@@ -44,15 +45,18 @@ export default ({ $axios }, inject) => {
       }
       let confirmedRaw;
       let deathsRaw;
+      let recoveredRaw;
       try {
-        [confirmedRaw, deathsRaw] = await Promise.all([
+        [confirmedRaw, deathsRaw, recoveredRaw] = await Promise.all([
           $axios.get(dataSourceConfirmed),
           $axios.get(dataSourceDeaths),
+          $axios.get(dataSourceRecovered),
         ]);
       } catch (err) {
-        [confirmedRaw, deathsRaw] = await Promise.all([
+        [confirmedRaw, deathsRaw, recoveredRaw] = await Promise.all([
           $axios.get(corsProxy + dataSourceConfirmed),
           $axios.get(corsProxy + dataSourceDeaths),
+          $axios.get(corsProxy + dataSourceRecovered),
         ]);
       }
 
@@ -65,10 +69,15 @@ export default ({ $axios }, inject) => {
           header: true,
           skipEmptyLines: true,
         }).data,
+        recovered: csvParser.parse(recoveredRaw.data, {
+          header: true,
+          skipEmptyLines: true,
+        }).data,
       };
       const items = [];
       rawData.infected.forEach((item, index) => {
-        const deaths = rawData.deaths[index];
+        const deaths = rawData.deaths[index] || {};
+        const recovered = rawData.recovered[index] || {};
         Object.keys(item)
           .filter(i => ![
             'Province/State',
@@ -78,7 +87,8 @@ export default ({ $axios }, inject) => {
           ].includes(i))
           .forEach((day) => {
             const currentDeaths = parseInt(deaths[day] || 0, 10);
-            const notInfected = currentDeaths;
+            const currentRecovered = parseInt(recovered[day] || 0, 10);
+            const notInfected = currentDeaths + currentRecovered;
             items.push({
               area: [item['Province/State'], item['Country/Region']].filter(v => !!v),
               date: formatDate(day),
