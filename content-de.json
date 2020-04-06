@@ -1,0 +1,30 @@
+{
+  "label": {
+    "infected": "Infizierte",
+    "infected-prediction": "Infizierte Vorhersage",
+    "deaths": "Tote",
+    "deaths-prediction": "Tote Vorhersage",
+    "recovered": "Erholt",
+    "recovered-prediction": "Erholt Vorhersage",
+    "region": "Region",
+    "language": "Sprache",
+    "show-separate": "getrennt anzeigen",
+    "show-combined": "gemeinsam anzeigen",
+    "worst-case-precent": "% schlimmster Fall"
+  },
+  "slider": {
+    "stay-at-home": "Zu Hause bleiben",
+    "going-for-run-alone": "Alleine Laufen gehen",
+    "less-than-2m-distance": "Weniger als 2m Abstand",
+    "shake-hands": "Händeschütteln",
+    "going-out-dine-with-friends": "Mit Freunden Essen gehen",
+    "shopping": "Einkaufsbummel",
+    "hug-kiss-with-friends": "Freunde umarmen oder küssen",
+    "flat-party": "Hausparty",
+    "daily-canteen-visit": "Täglicher Kantinenbesuch",
+    "go-clubbing": "Im Club Feiern gehen",
+    "visit-festival": "Festivalbesuch"
+  },
+  "Germany": "Deutschland",
+  "Egypt": "Ägypten" 
+}
