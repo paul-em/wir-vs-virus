@@ -21,7 +21,7 @@
     "chart.js": "^2.9.3",
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
-    "papaparse": "^5.1.1",
+    "papaparse": "^5.2.0",
     "seir": "^1.0.2",
     "underscore": "^1.9.2",
     "vue": "^2.6.11",
