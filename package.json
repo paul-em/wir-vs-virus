@@ -30,7 +30,7 @@
     "vue-slider-component": "^3.1.1"
   },
   "devDependencies": {
-    "autoprefixer": "^8.6.4",
+    "autoprefixer": "^10.4.13",
     "babel-eslint": "^8.2.1",
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^3.1.0",
@@ -42,6 +42,6 @@
     "nodemon": "^1.11.0",
     "prettier": "1.14.3",
     "push-dir": "^0.4.1",
-    "tailwindcss": "~0.6.6"
+    "tailwindcss": "~3.2.4"
   }
 }
