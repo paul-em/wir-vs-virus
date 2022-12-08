@@ -39,7 +39,7 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-vue": "^4.0.0",
-    "nodemon": "^1.11.0",
+    "nodemon": "^2.0.20",
     "prettier": "1.14.3",
     "push-dir": "^0.4.1",
     "tailwindcss": "~0.6.6"
